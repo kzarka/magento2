@@ -94,3 +94,12 @@ Stack trace:
 #5 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\View\Layout\Interceptor->___callPare in /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php on line 652
 [19-Jun-2018 11:23:32 UTC] PHP Fatal error:  Class OpenCert\Hello\Block\Helloworld contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Magento\Framework\DataObject\IdentityInterface::getIdentities) in /var/www/html/magento2/app/code/OpenCert/Hello/Block/HelloWorld.php on line 4
 [19-Jun-2018 11:25:24 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/html/magento2/app/code/OpenCert/Hello/Block/HelloWorld.php on line 17
+[19-Jun-2018 11:37:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function setMyName() on null in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml:2
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(OpenCert\Hello\Block\Helloworld), '/var/www/html/m...', Array)
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#4 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(534): Magento\Framework\View\Layout->_renderBlock('helloworld')
+#6 /v in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 2
