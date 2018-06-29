@@ -2,4 +2,17 @@
 $this->getCatalogSession()->setMyName('Mageplaza');
 echo $block->getCatalogSession()->getMyName();
 echo "<br><br>";
-echo $this->getHelloWorldTxt(); ?></h1>
+echo $this->getHelloWorldTxt(); 
+?>
+<img src="<?php echo $this->getViewFileUrl('images/logo.png'); ?>"/>
+<?php
+$_productCollection = $block->recentProduct();
+foreach ($_productCollection as $product) {
+	//echo $product->getProductUrl();
+	//echo "<br>";
+	//echo $product->getName();
+	//echo $block->getAddToCartUrl($product);
+	//echo $block->getViewFileUrl('images/images.png');
+}
+//var_dump($_productCollection);
+?></h1>

@@ -103,3 +103,100 @@ Stack trace:
 #4 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\View\Element\AbstractBlock->toHtml()
 #5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(534): Magento\Framework\View\Layout->_renderBlock('helloworld')
 #6 /v in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 2
+[22-Jun-2018 03:00:44 UTC] PHP Fatal error:  Uncaught Zend_Cache_Exception: cache_dir "/var/www/html/magento2/var/cache/" is not writable in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Cache.php:209
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Cache/Backend/File.php(180): Zend_Cache::throwException('cache_dir "/var...')
+#1 /var/www/html/magento2/vendor/colinmollenhour/cache-backend-file/File.php(87): Zend_Cache_Backend_File->setCacheDir('/var/www/html/m...')
+#2 /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Cache.php(153): Cm_Cache_Backend_File->__construct(Array)
+#3 /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Cache.php(94): Zend_Cache::_makeBackend('Cm_Cache_Backen...', Array, true, true)
+#4 /var/www/html/magento2/vendor/magento/framework/App/Cache/Frontend/Factory.php(158): Zend_Cache::factory('Magento\\Framewo...', 'Cm_Cache_Backen...', Array, Array, true, true, true)
+#5 /var/www/html/magento2/vendor/magento/framework/App/Cache/Frontend/Pool.php(67): M in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Cache.php on line 209
+[26-Jun-2018 10:04:40 UTC] PHP Fatal error:  Uncaught Exception: Recoverable Error: Object of class Magento\Catalog\Model\ResourceModel\Product\Collection\Interceptor could not be converted to string in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 6 in /var/www/html/magento2/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml(6): Magento\Framework\App\ErrorHandler->handler(4096, 'Object of class...', '/var/www/html/m...', 6, Array)
+#1 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/var/www/html/m...')
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(OpenCert\Hello\Block\Helloworld), '/var/www/html/m...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#4 /var/ in /var/www/html/magento2/vendor/magento/framework/App/ErrorHandler.php on line 61
+[26-Jun-2018 10:05:13 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 601899008 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 6
+[26-Jun-2018 10:10:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Catalog\Model\ResourceModel\Product\Collection\Interceptor::first() in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml:6
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(OpenCert\Hello\Block\Helloworld), '/var/www/html/m...', Array)
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#4 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(534): Magento\ in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 6
+[26-Jun-2018 10:12:07 UTC] PHP Parse error:  syntax error, unexpected 'var_dump' (T_STRING) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 7
+[26-Jun-2018 10:12:31 UTC] PHP Parse error:  syntax error, unexpected '$_productCollection' (T_VARIABLE) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 7
+[26-Jun-2018 10:16:02 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 8
+[26-Jun-2018 10:16:28 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 8
+[26-Jun-2018 10:17:02 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 7
+[26-Jun-2018 10:17:21 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 7
+[26-Jun-2018 10:17:23 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 7
+[26-Jun-2018 10:20:12 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[26-Jun-2018 10:27:37 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 9
+[26-Jun-2018 10:29:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[26-Jun-2018 10:32:16 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /var/www/html/magento2/app/code/OpenCert/Hello/Block/HelloWorld.php on line 47
+[26-Jun-2018 10:48:38 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ')' in /var/www/html/magento2/app/code/OpenCert/Hello/Block/HelloWorld.php on line 20
+[27-Jun-2018 01:32:49 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /var/www/html/magento2/app/code/OpenCert/Hello/Block/HelloWorld.php on line 51
+[27-Jun-2018 01:36:31 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 12
+[27-Jun-2018 02:06:41 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[27-Jun-2018 02:06:46 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[27-Jun-2018 02:06:47 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[27-Jun-2018 02:17:32 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[27-Jun-2018 02:25:18 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[27-Jun-2018 02:51:53 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /var/www/html/magento2/app/code/ShowCategory/CatewithImage/Block/CatewithImage.php on line 65
+[27-Jun-2018 03:12:37 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/magento2/app/code/ShowCategory/CatewithImage/Block/CatewithImage.php on line 67
+[27-Jun-2018 03:12:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ShowCategory\CatewithImage\Block\addAttributeToFilter() in /var/www/html/magento2/app/code/ShowCategory/CatewithImage/Block/CatewithImage.php:65
+Stack trace:
+#0 [internal function]: ShowCategory\CatewithImage\Block\CatewithImage->getCategoryCollection()
+#1 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(82): call_user_func_array(Array, Array)
+#2 /var/www/html/magento2/app/code/ShowCategory/CatewithImage/view/frontend/templates/category.phtml(2): Magento\Framework\View\TemplateEngine\Php->__call('getCategoryColl...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/var/www/html/m...')
+#4 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(ShowCategory\CatewithImage\Block\CatewithImage), '/var/www/html/m...', Array)
+#5 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\F in /var/www/html/magento2/app/code/ShowCategory/CatewithImage/Block/CatewithImage.php on line 65
+[28-Jun-2018 04:24:03 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 13
+[28-Jun-2018 12:47:19 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115

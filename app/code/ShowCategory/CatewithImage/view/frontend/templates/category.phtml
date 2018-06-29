@@ -1,0 +1,33 @@
+<?php
+    $categories = $this->getCategoryCollection();
+    $categoryHelper = $this->getCategoryHelper();
+?>
+<div class="container">
+<h2>Category</h2>
+<div class="widget block block-static-block cwiw" id="catewithimg">
+    <div class="block-content">
+        <div class="content-heading">
+            <h2 class="title"><?php echo $this->getMainTitle(); ?></h2>
+            <p class="info"><?php echo $this->getTagLine(); ?></p>
+        </div>
+        <div class="row">
+        <?php
+        //die("Count: ". $categories->count());
+        foreach($categories as $category):
+            $cat = $this->getCategorymodel($category->getId());
+            $image = $cat->getImageUrl();
+            //echo "This is". $cat->getName();
+        ?>
+            <?php if($image == null): ?>
+                <div class="col-md-4">
+                    <a class="category_name" href="<?php echo $cat->getUrl(); ?>">
+                       <img src="http://localhost/magento2/pub/media/catalog/product/cache/f073062f50e48eb0f0998593e568d857/i/p/iphonex-white.jpg" class="img-responsive category_image" alt="<?php echo $cat->getName(); ?>" />
+                        <h3><span><?php echo $cat->getName(); ?></span></h3>
+                    </a>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+</div>
