@@ -222,3 +222,37 @@ Stack trace:
 [02-Jul-2018 02:00:09 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
 [02-Jul-2018 02:00:16 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 467681280 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
 [02-Jul-2018 02:47:55 UTC] PHP Parse error:  syntax error, unexpected 'die' (T_EXIT) in /var/www/html/magento2/app/code/Task4/ObserverLogs/Observer/LogsAction.php on line 15
+[02-Jul-2018 03:34:20 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[02-Jul-2018 03:36:15 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[02-Jul-2018 05:35:21 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[02-Jul-2018 08:27:56 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[02-Jul-2018 09:53:52 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[02-Jul-2018 10:11:56 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115

@@ -150,6 +150,7 @@ return [
     'OpenCert_Hello' => 1,
     'Shopial_Facebook' => 1,
     'ShowCategory_CatewithImage' => 1,
+    'Task4_ObserverDiscount' => 1,
     'Task4_ObserverLogs' => 1,
     'Temando_Shipping' => 1,
     'Vertex_Tax' => 1

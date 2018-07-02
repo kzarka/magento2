@@ -7,7 +7,6 @@ echo $this->getHelloWorldTxt();
 <img src="<?php echo $this->getViewFileUrl('images/logo.png'); ?>"/>
 <?php
 $_productCollection = $block->recentProduct();
-echo "<pre>"; var_dump($_productCollection);die("dead");
 foreach ($_productCollection as $product) {
 	//echo $product->getProductUrl();
 	//echo "<br>";
@@ -15,5 +14,5 @@ foreach ($_productCollection as $product) {
 	//echo $block->getAddToCartUrl($product);
 	//echo $block->getViewFileUrl('images/images.png');
 }
-var_dump($_productCollection->getData());
+print_r($_productCollection->getData());
 ?></h1>
