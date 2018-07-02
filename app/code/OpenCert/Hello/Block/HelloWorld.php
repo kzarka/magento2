@@ -57,6 +57,7 @@ class Helloworld extends \Magento\Framework\View\Element\Template
     {
         $this->_category = $this->_categoryFactory->create();
         $this->_category->load($categoryId);
+        
         return $this->_category;
     }
 

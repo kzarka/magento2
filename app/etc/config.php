@@ -9,6 +9,8 @@ return [
     'Magento_Theme' => 1,
     'Magento_Customer' => 1,
     'Magento_AdminNotification' => 1,
+    'Magefan_Community' => 1,
+    'Magefan_ConflictDetector' => 1,
     'Magento_Indexer' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Config' => 1,
@@ -148,6 +150,7 @@ return [
     'OpenCert_Hello' => 1,
     'Shopial_Facebook' => 1,
     'ShowCategory_CatewithImage' => 1,
+    'Task4_ObserverLogs' => 1,
     'Temando_Shipping' => 1,
     'Vertex_Tax' => 1
   ]

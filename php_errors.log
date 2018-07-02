@@ -200,3 +200,25 @@ Stack trace:
 #3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
 #4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
 #5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[29-Jun-2018 02:02:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getStoreLabel() on boolean in /var/www/html/magento2/vendor/magento/module-catalog/view/frontend/templates/product/view/attribute.phtml:32
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/var/www/html/m...', Array)
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#4 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(534): Magento\Framework\View in /var/www/html/magento2/vendor/magento/module-catalog/view/frontend/templates/product/view/attribute.phtml on line 32
+[29-Jun-2018 08:59:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Catalog\Model\ResourceModel\Product\Collection\Interceptor::debug() in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml:10
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(OpenCert\Hello\Block\Helloworld), '/var/www/html/m...', Array)
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#4 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(534): Magento in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[29-Jun-2018 09:01:03 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 668995584 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[29-Jun-2018 09:02:12 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 534790144 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[02-Jul-2018 01:58:58 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 534790144 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[02-Jul-2018 02:00:09 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[02-Jul-2018 02:00:16 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 467681280 bytes) in /var/www/html/magento2/app/code/OpenCert/Hello/view/frontend/templates/helloworld.phtml on line 10
+[02-Jul-2018 02:47:55 UTC] PHP Parse error:  syntax error, unexpected 'die' (T_EXIT) in /var/www/html/magento2/app/code/Task4/ObserverLogs/Observer/LogsAction.php on line 15

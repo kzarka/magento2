@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1f246420b0fad3e7bd0d1f31ba31168",
-    "content-hash": "ff955ad5ffd1195f31966368b30476f9",
+    "hash": "e4eb84bfee803c1b2151d2be6b3c022b",
+    "content-hash": "d24bee9040dfa0ac3ecd86f9d51c6ed9",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -1208,6 +1208,74 @@
                 "terminal"
             ],
             "time": "2015-01-18 14:31:58"
+        },
+        {
+            "name": "magefan/module-community",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-community.git",
+                "reference": "f0073919536a16b6456dcb90210d501381411954"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-community/zipball/f0073919536a16b6456dcb90210d501381411954",
+                "reference": "f0073919536a16b6456dcb90210d501381411954",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.6.5 || >=7.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\Community\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "time": "2018-04-16 18:47:32"
+        },
+        {
+            "name": "magefan/module-conflict-detector",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-conflict-detector.git",
+                "reference": "72e78fdf6c15e91824564e71e40a7bee38057842"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-conflict-detector/zipball/72e78fdf6c15e91824564e71e40a7bee38057842",
+                "reference": "72e78fdf6c15e91824564e71e40a7bee38057842",
+                "shasum": ""
+            },
+            "require": {
+                "magefan/module-community": ">=2.0.1",
+                "php": "~5.6.5 || >=7.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\ConflictDetector\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Detect extension conflicts",
+            "time": "2018-04-25 17:53:24"
         },
         {
             "name": "magento/composer",
