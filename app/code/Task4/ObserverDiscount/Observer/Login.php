@@ -21,8 +21,8 @@ class Login implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
    {
    		$couponCode = "DISCOUNT50";
-        $customer = $observer->getEvent()->getCustomer();
-        $this->_registry->register('user_name', $customer->getName());
+        //customer = $observer->getEvent()->getCustomer();
+        //$this->_registry->register('user_name', $customer->getName());
         $quote = $observer->getEvent()->getQuote();
         $quote->setCouponCode($couponCode)
             ->save();
