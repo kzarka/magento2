@@ -289,3 +289,5 @@ Stack trace:
 #4 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
 #5 /var/www/html/magento2/vendor/magento/framework/Interception/Inter in /var/www/html/magento2/app/code/Task4/PluginInjection/view/frontend/templates/absolute_footer.phtml on line 10
 [03-Jul-2018 07:47:05 UTC] PHP Parse error:  syntax error, unexpected '?>' in /var/www/html/magento2/app/code/Task4/PluginInjection/view/frontend/templates/absolute_footer.phtml on line 11
+[03-Jul-2018 09:14:36 UTC] PHP Parse error:  syntax error, unexpected '   public' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /var/www/html/magento2/app/code/Task4/PreferenceClass/Model/Catalog/Product.php on line 8
+[03-Jul-2018 09:16:55 UTC] PHP Parse error:  syntax error, unexpected '   ' (T_STRING), expecting ';' or '{' in /var/www/html/magento2/app/code/Task4/PreferenceClass/Model/Catalog/Product.php on line 9

@@ -153,6 +153,7 @@ return [
     'Task4_ObserverDiscount' => 1,
     'Task4_ObserverLogs' => 1,
     'Task4_PluginInjection' => 1,
+    'Task4_PreferenceClass' => 1,
     'Temando_Shipping' => 1,
     'Vertex_Tax' => 1
   ]
