@@ -1,6 +1,6 @@
 <?php
  
-namespace ask4\ProductFactoryTest\Controller\Index;
+namespace Task4\ObjectManagerTest\Controller\Index;
  
 use Magento\Framework\App\Action\Context;
  

@@ -1,6 +1,6 @@
 <?php
  
-namespace ask4\RepositoryInterfaceTest\Controller\Index;
+namespace Task4\RepositoryInterfaceTest\Controller\Index;
  
 use Magento\Framework\App\Action\Context;
  

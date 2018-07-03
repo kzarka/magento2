@@ -2,7 +2,7 @@
  
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="task4_repositoryInterfaceTest" frontName="repotest123">
+        <route id="repotest123" frontName="repotest123">
             <module name="Task4_RepositoryInterfaceTest" />
         </route>
     </router>

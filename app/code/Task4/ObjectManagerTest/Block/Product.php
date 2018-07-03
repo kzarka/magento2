@@ -17,6 +17,6 @@ class Product extends \Magento\Framework\View\Element\Template
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository'); 
 		$product = $productRepository->get($sku);
-	    return $this->product;
+	    return $product;
 	}
 }

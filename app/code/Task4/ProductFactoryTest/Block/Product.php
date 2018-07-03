@@ -17,7 +17,7 @@ class Product extends \Magento\Framework\View\Element\Template
 	public function loadMyProduct($sku)
 	{
 		$product = $this->_productFactory->create();
-		$product->loadByAttribute('sku', $sku);
-	    return $this->product;
+		$product->load($product->getIdBySku($sku));
+	    return $product;
 	}
 }
