@@ -1,7 +1,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
     <type name="Magento\Framework\App\RouterList">
     	<arguments>
-    		<argument name="RouterList" xsi:type="array">
+    		<argument name="routerList" xsi:type="array">
     			<item name="blog" xsi:type="array">
     				<item name="class" xsi:type="string">OpenTechiz\Blog\Controller\Router</item>
     				<item name="disable" xsi:type="boolean">false</item>

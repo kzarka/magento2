@@ -12,7 +12,7 @@ class Router implements \Magento\Framework\App\RouterInterface
 
     public function __construct(
         \Magento\Framework\App\ActionFactory $actionFactory,
-        \OsmanSorkar\Blog\Model\PostFactory $postFactory,
+        \OpenTechiz\Blog\Model\PostFactory $postFactory
     ) {
         $this->actionFactory = $actionFactory;
         $this->_postFactory = $postFactory;

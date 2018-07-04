@@ -313,3 +313,37 @@ Stack trace:
 [04-Jul-2018 05:02:00 UTC] PHP Fatal error:  Class OpenTechiz\Blog\Model\Post contains 17 abstract methods and must therefore be declared abstract or implement the remaining methods (OpenTechiz\Blog\Api\Data\PostInterface::getUrlKey, OpenTechiz\Blog\Api\Data\PostInterface::getTitle, OpenTechiz\Blog\Api\Data\PostInterface::getContent, ...) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 6
 [04-Jul-2018 05:04:26 UTC] PHP Fatal error:  Class OpenTechiz\Blog\Model\ResourceModel\Post contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Magento\Framework\Model\ResourceModel\AbstractResource::_construct) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php on line 0
 [04-Jul-2018 05:09:20 UTC] PHP Fatal error:  Access level to OpenTechiz\Blog\Model\ResourceModel\Post::__construct() must be public (as in class Magento\Framework\Model\ResourceModel\Db\AbstractDb) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php on line 0
+[04-Jul-2018 06:39:09 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400572416 bytes) in /var/www/html/magento2/app/code/OpenTechiz/Blog/view/frontend/templates/list.phtml on line 3
+[04-Jul-2018 09:12:23 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Router.php on line 16
+[04-Jul-2018 09:13:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Post::checkUrlKey() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php:24
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Router.php(27): OpenTechiz\Blog\Model\Post->checkUrlKey('view/index/1')
+#1 /var/www/html/magento2/vendor/magento/framework/App/FrontController.php(50): OpenTechiz\Blog\Controller\Router->match(Object(Magento\Framework\App\Request\Http))
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/magento/module-store/App/FrontController/Plugin/RequestPreprocessor.php(94): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closur in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 24
+[04-Jul-2018 09:13:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Post::checkUrlKey() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php:24
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Router.php(27): OpenTechiz\Blog\Model\Post->checkUrlKey('first-post')
+#1 /var/www/html/magento2/vendor/magento/framework/App/FrontController.php(50): OpenTechiz\Blog\Controller\Router->match(Object(Magento\Framework\App\Request\Http))
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/magento/module-store/App/FrontController/Plugin/RequestPreprocessor.php(94): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure} in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 24
+[04-Jul-2018 09:16:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Post::_getLoadByUrlKeySelect() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php:13
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php(24): OpenTechiz\Blog\Model\ResourceModel\Post->checkUrlKey('first-post')
+#1 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Router.php(27): OpenTechiz\Blog\Model\Post->checkUrlKey('first-post')
+#2 /var/www/html/magento2/vendor/magento/framework/App/FrontController.php(50): OpenTechiz\Blog\Controller\Router->match(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#5 /var/www/html/magento2/vendor/mage in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php on line 13
+[04-Jul-2018 09:16:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Post::_getLoadByUrlKeySelect() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php:13
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php(24): OpenTechiz\Blog\Model\ResourceModel\Post->checkUrlKey('first-post')
+#1 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Router.php(27): OpenTechiz\Blog\Model\Post->checkUrlKey('first-post')
+#2 /var/www/html/magento2/vendor/magento/framework/App/FrontController.php(50): OpenTechiz\Blog\Controller\Router->match(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#5 /var/www/html/magento2/vendor/mage in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php on line 13
+[04-Jul-2018 09:18:07 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php on line 119
+[04-Jul-2018 09:18:42 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 18
