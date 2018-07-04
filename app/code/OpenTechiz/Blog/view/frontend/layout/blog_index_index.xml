@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="OpenTechiz_Blog/css/blog.css"/>
+	</head>
+    <body>
+    	<referenceContainer name="content">
+    		<block class="OpenTechiz\Blog\Block\PostList" name="blog.posts" template="OpenTechiz_Blog::list.phtml" />
+    	</referenceContainer>
+    </body>
+</page>

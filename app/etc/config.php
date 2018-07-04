@@ -148,6 +148,7 @@ return [
     'Mageplaza_Core' => 1,
     'Mgt_DeveloperToolbar' => 1,
     'OpenCert_Hello' => 1,
+    'OpenTechiz_Blog' => 1,
     'Shopial_Facebook' => 1,
     'ShowCategory_CatewithImage' => 1,
     'Task4_ArgumentReplacement' => 1,
