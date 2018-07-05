@@ -351,3 +351,29 @@ Stack trace:
 [05-Jul-2018 08:12:52 UTC] PHP Fatal error:  Interface 'OpenTechiz\Blog\Api\Data\CommentInterface' not found in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Comment.php on line 6
 [05-Jul-2018 08:13:49 UTC] PHP Fatal error:  Class OpenTechiz\Blog\Model\Post contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (OpenTechiz\Blog\Api\Data\CommentInterface::setAuthor) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Comment.php on line 6
 [05-Jul-2018 08:15:48 UTC] PHP Fatal error:  Class OpenTechiz\Blog\Model\Comment contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (OpenTechiz\Blog\Api\Data\CommentInterface::setAuthor) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Comment.php on line 6
+[05-Jul-2018 08:43:30 UTC] PHP Parse error:  syntax error, unexpected '$protected' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 10
+[05-Jul-2018 08:44:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Framework\App\Request\Http::getRequest() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php:26
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/view/frontend/templates/comment.phtml(1): OpenTechiz\Blog\Block\CommentList->getPostID()
+#1 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/var/www/html/m...')
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(OpenTechiz\Blog\Block\CommentList), '/var/www/html/m...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#4 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\ in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 26
+[05-Jul-2018 08:48:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Framework\App\Request\Http::getRequest() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php:26
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/view/frontend/templates/comment.phtml(1): OpenTechiz\Blog\Block\CommentList->getPostID()
+#1 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/var/www/html/m...')
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(OpenTechiz\Blog\Block\CommentList), '/var/www/html/m...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#4 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework\ in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 26
+[05-Jul-2018 08:49:44 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 26
+[05-Jul-2018 09:06:30 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115

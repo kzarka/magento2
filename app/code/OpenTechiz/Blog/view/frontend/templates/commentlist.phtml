@@ -1,17 +1,15 @@
-<H1><?php echo __('Lastest Blog Posts') ?></H1>
+<H4><?php echo __('Lastest Comment For Post ID') . $block->getPostID() ?></H4>
 <ul class="blog-post-list">
 	<?php foreach ($block->getComments() as $cmt): ?>
 		<li class="blog-post-list-item">
-			<h3 class="blog-post-item-title">
-				<a href=""><?php echo $cmt->getAuthor() ?></a>
-			</h3>
+			<a href=""><?php echo $cmt->getAuthor() ?></a>
 
 			<div class="blog-post-item-content">
 				<?php echo $cmt->getContent() ?>
 			</div>
 
 			<div class="blog-post-item-meta">
-				<strong><?php echo __('Created at: ') ?></strong> <?php echo $cmt->getCreationTime() ?>
+				<small><?php echo __('Created at: ') ?> <?php echo $cmt->getCreationTime() ?></small>
 			</div>
 
 		</li>
