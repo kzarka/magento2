@@ -14,7 +14,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $installer = $setup;
 
     	$installer->startSetup();
-    	if (version_compare($context->getVersion(), "1.1.5", "<")) {
+    	if (version_compare($context->getVersion(), "1.1.6", "<")) {
 	    	$table = $installer->getConnection()
 		        ->newTable($installer->getTable('opentechiz_blog_comment'))
 		        ->addColumn('comment_id', Table::TYPE_SMALLINT, null, [
@@ -25,7 +25,10 @@ class UpgradeSchema implements UpgradeSchemaInterface
 		        ->addColumn('content', Table::TYPE_TEXT, 255, ['nullable => false'], 'Comment Content')
 		        ->addColumn('author', Table::TYPE_TEXT, 255, ['nullable => false'], 'Author Comment')
 		        ->addColumn('post_id', Table::TYPE_SMALLINT, null, ['nullable' => false], 'Post ID')
-		        ->addColumn('creation_time', Table::TYPE_TIMESTAMP, null, [], 'Comment Created At')
+		        ->addColumn('creation_time', Table::TYPE_TIMESTAMP, null,[
+		        	'nullable' => false, 
+		        	'default' => Table::TIMESTAMP_INIT
+		        	], 'Comment Created At')
 		        ->setComment('Comment Table');
 
 		    $installer->getConnection()->createTable($table);
