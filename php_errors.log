@@ -385,3 +385,5 @@ Stack trace:
 #2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
 #3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
 #4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->Magento\Framework\In in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 40
+[05-Jul-2018 10:53:00 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 23
+[05-Jul-2018 11:45:11 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 16
