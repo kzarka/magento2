@@ -16,6 +16,16 @@ class PostView extends \Magento\Framework\View\Element\Template implements
         $this->_postFactory = $postFactory;
     }
 
+    public function _prepareLayout()
+    {
+       //set page title
+        $post = $this->getPost();
+
+       $this->pageConfig->getTitle()->set(__($post->getTitle()));
+
+       return parent::_prepareLayout();
+    }
+
     public function getPost()
     {
         if (!$this->hasData('post')) {

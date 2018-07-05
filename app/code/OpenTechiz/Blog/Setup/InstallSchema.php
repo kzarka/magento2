@@ -31,5 +31,4 @@ class InstallSchema implements InstallSchemaInterface
 	        ->setComment('Post Table');
 	    $installer->getConnection()->createTable($table);
 	}
-	
 }
