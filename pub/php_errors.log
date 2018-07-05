@@ -1,0 +1,8 @@
+[05-Jul-2018 07:44:04 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/var/www/html/magento2//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /var/www/html/magento2/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /var/www/html/magento2/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /var/www/html/magento2/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /var/www/html/magento2/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /var/www/html/magento2/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /var/www/html/magento2/vendor/magento/framework/Cac in /var/www/html/magento2/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107

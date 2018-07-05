@@ -1,5 +1,5 @@
 <?php
-namespace OpenTechiz\Blog\Model\ResourceModel\Post;
+namespace OpenTechiz\Blog\Model\ResourceModel\Comment;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -7,7 +7,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 	/**
      * @var string
      */
-    protected $_idFieldName = 'post_id';
+    protected $_idFieldName = 'comment_id';
     /**
      * Define resource model
      *
@@ -15,6 +15,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('OpenTechiz\Blog\Model\Post', 'OpenTechiz\Blog\Model\ResourceModel\Post');
+        $this->_init('OpenTechiz\Blog\Model\Comment', 'OpenTechiz\Blog\Model\ResourceModel\Comment');
     }
 }
