@@ -1,7 +1,16 @@
-<form class="form" action="<?php echo $block->getFormAction() ?>" method="post">
-
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "OpenTechiz_Blog/js/commentajax": {
+                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>"
+            }
+        }
+    }
+</script>    
+<form class="form" method="post" id="comment-form">
     <fieldset class="fieldset">
         <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Add new comment') ?></span></legend><br>
+        <div class="note"></div>
         <div class="field required">
             <label for="author" class="label">
                 <span><?php /* @escapeNotVerified */ echo __('Name') ?></span>

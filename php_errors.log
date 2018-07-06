@@ -401,3 +401,27 @@ Stack trace:
 #1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(111): OpenTechiz\Blog\Model\ResourceModel\Post->__construct(Object(Magento\Framework\Stdlib\DateTime\DateTime))
 #2 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(66): Magento\Framework\ObjectManager\Factory\AbstractFactory->createObject('OpenTechiz\\Blog...', Array)
 #3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/ObjectManager.php(70): Magento\Framework\Obje in /var/www/html/magento2/vendor/magento/framework/Model/ResourceModel/Db/AbstractDb.php on line 142
+[06-Jul-2018 08:36:07 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 17
+[06-Jul-2018 08:37:21 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 17
+[06-Jul-2018 08:40:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Zend_Validate::is(), 1 passed in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 42 and at least 2 expected in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php:195
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php(42): Zend_Validate::is('')
+#1 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___call in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php on line 195
+[06-Jul-2018 08:44:53 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Zend_Validate::is(), 1 passed in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 42 and at least 2 expected in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php:195
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php(42): Zend_Validate::is('')
+#1 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___call in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php on line 195
+[06-Jul-2018 08:46:47 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Zend_Validate::is(), 1 passed in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 42 and at least 2 expected in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php:195
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php(42): Zend_Validate::is('')
+#1 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___call in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php on line 195
+[06-Jul-2018 08:48:06 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 42
