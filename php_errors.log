@@ -395,3 +395,9 @@ Stack trace:
 #3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
 #4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Save in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 45
 [06-Jul-2018 02:30:05 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 15
+[06-Jul-2018 04:06:46 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Magento\Framework\Model\ResourceModel\Db\AbstractDb::__construct(), 0 passed in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php on line 13 and at least 1 expected in /var/www/html/magento2/vendor/magento/framework/Model/ResourceModel/Db/AbstractDb.php:142
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Post.php(13): Magento\Framework\Model\ResourceModel\Db\AbstractDb->__construct()
+#1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(111): OpenTechiz\Blog\Model\ResourceModel\Post->__construct(Object(Magento\Framework\Stdlib\DateTime\DateTime))
+#2 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(66): Magento\Framework\ObjectManager\Factory\AbstractFactory->createObject('OpenTechiz\\Blog...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/ObjectManager.php(70): Magento\Framework\Obje in /var/www/html/magento2/vendor/magento/framework/Model/ResourceModel/Db/AbstractDb.php on line 142

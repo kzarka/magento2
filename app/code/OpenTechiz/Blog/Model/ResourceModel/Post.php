@@ -3,7 +3,18 @@ namespace OpenTechiz\Blog\Model\ResourceModel;
 
 class Post extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
-	protected function _construct()
+	
+    protected $_date;
+    function __construct(
+        \Magento\Framework\Model\ResourceModel\Db\Context $context,
+        \Magento\Framework\Stdlib\DateTime\DateTime $date
+    )
+    {
+        $this->_date = $date;
+        parent::__construct($context);
+    }
+
+    protected function _construct()
 	{
         $this->_init('opentechiz_blog_post', 'post_id');
     }
