@@ -394,3 +394,4 @@ Stack trace:
 #2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
 #3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
 #4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Save in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 45
+[06-Jul-2018 02:30:05 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 15

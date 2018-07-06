@@ -11,7 +11,7 @@ class Save extends Action
     protected $_resultFactory;
 
     function __construct(
-        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\App\Action\Context $context
     )
     {
         $this->_resultFactory = $context->getResultFactory();
