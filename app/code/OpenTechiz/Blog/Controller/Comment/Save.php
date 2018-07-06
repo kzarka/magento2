@@ -45,21 +45,20 @@ class Save extends Action
             $message = "Name can not be empty!";
         }
 
-        // save data to database
-        $author   = $postData['author'];
-        $content    = $postData['content'];
-        $post_id = $postData['post_id'];
-
-        $comment = $this->_objectManager->create('OpenTechiz\Blog\Model\Comment');
-        $comment->setAuthor($author);
-        $comment->setContent($content);
-        $comment->setPostID($post_id);
-
-        $comment->save();
-
         $jsonResultResponse = $this->_resultJsonFactory->create();
         if(!$error)
         {
+            // save data to database
+            $author   = $postData['author'];
+            $content    = $postData['content'];
+            $post_id = $postData['post_id'];
+
+            $comment = $this->_objectManager->create('OpenTechiz\Blog\Model\Comment');
+            $comment->setAuthor($author);
+            $comment->setContent($content);
+            $comment->setPostID($post_id);
+
+            $comment->save();
             $jsonResultResponse->setData([
                 'result' => 'success',
                 'message' => 'Thank you for your submission. Our Admins will review and approve shortly'

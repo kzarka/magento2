@@ -425,3 +425,32 @@ Stack trace:
 #3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
 #4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___call in /var/www/html/magento2/vendor/magento/zendframework1/library/Zend/Validate.php on line 195
 [06-Jul-2018 08:48:06 UTC] PHP Parse error:  syntax error, unexpected ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 42
+[06-Jul-2018 12:10:03 UTC] PHP Fatal error:  Uncaught Error: Class 'OpenTechiz\Blog\Controller\Comment\CommentInterface' not found in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php:35
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Load/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Load->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Load\Interc in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php on line 35
+[06-Jul-2018 12:11:29 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Framework\ObjectM in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[06-Jul-2018 12:11:47 UTC] PHP Fatal error:  Uncaught Error: Class 'OpenTechiz\Blog\Controller\Comment\CommentCollection' not found in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php:37
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Load/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Load->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Load\Inter in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php on line 37
+[06-Jul-2018 12:12:16 UTC] PHP Fatal error:  Uncaught Error: Class 'OpenTechiz\Blog\Controller\Comment\CommentCollection' not found in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php:37
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Load/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Load->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Load\Inter in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php on line 37

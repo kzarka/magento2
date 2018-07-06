@@ -2,11 +2,13 @@
     {
         "*": {
             "OpenTechiz_Blog/js/commentajax": {
-                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>"
+                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>",
+                "AjaxCommentLoadUrl": "<?php echo $block->getAjaxUrl() ?>",
+                "AjaxPostId": "<?php echo $block->getPostID(); ?>"
             }
         }
     }
-</script>    
+</script> 
 <form class="form" method="post" id="comment-form">
     <fieldset class="fieldset">
         <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Add new comment') ?></span></legend><br>

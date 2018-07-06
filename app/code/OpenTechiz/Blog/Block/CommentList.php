@@ -9,14 +9,18 @@ class CommentList extends \Magento\Framework\View\Element\Template
 
 	protected $_request;
 
+	protected $_resultJsonFactory;
+
 	public function __construct(
 		\Magento\Framework\View\Element\Template\Context $context,
 		\OpenTechiz\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
+        \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
 		\Magento\Framework\App\RequestInterface $request,
 		array $data = []
 	)
 	{
 		$this->_commentCollectionFactory = $commentCollectionFactory;
+		$this->_resultJsonFactory = $resultJsonFactory;
 		$this->_request = $request;
 		parent::__construct($context, $data);
 	}

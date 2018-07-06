@@ -22,6 +22,11 @@ class SaveComment extends \Magento\Framework\View\Element\Template
 		return '/magento2/blog/comment/save';
 	}
 
+	public function getAjaxUrl()
+	{
+		return '/magento2/blog/comment/load';
+	}
+
 	public function getPostID()
 	{
 		return $this->_request->getParam('post_id', false);
