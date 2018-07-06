@@ -25,13 +25,12 @@ define([
 					data: param,
 					type: 'POST'
 				}).done(function(data){
-					console.log(data);
+					//console.log(data);
 					if(data.result== false){
-						$('.note').html(data.message);
 						$('.note').css('color', 'red');
+						$('.note').html(data.message);
 						return false;
-					}
-									
+					}				
 					document.getElementById('comment-form').reset();
 					$('.note').html(data.message);
 					$('.note').css('color', 'green');

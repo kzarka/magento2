@@ -28,4 +28,25 @@
             </argument>
         </arguments>
     </type>
+
+    <preference for="OpenTechiz\Blog\Api\Data\CommentInterface" type="OpenTechiz\Blog\Model\Comment" />
+    <virtualType name="CommentGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">OpenTechiz\Blog\Model\Resource\Comment\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">BlogGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="OpenTechiz\Blog\Model\ResourceModel\Comment\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">opentechiz_blog_comment</argument>
+            <argument name="resourceModel" xsi:type="string">OpenTechiz\Blog\Model\ResourceModel\Comment</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="blog_comment_listing_data_source" xsi:type="string">OpenTechiz\Blog\Model\ResourceModel\Comment\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
