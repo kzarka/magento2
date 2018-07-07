@@ -16,7 +16,7 @@ define([
 					post_id: AjaxPostId
 				}
 			}).done(function(data){
-				console.log(data);
+				//console.log(data);
 				var comments = data.items;
 				var html = '<ul class="blog-post-list">';
 				comments.forEach(function(cmt){

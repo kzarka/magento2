@@ -26,7 +26,7 @@ define([
 					type: 'POST'
 				}).done(function(data){
 					//console.log(data);
-					if(data.result== false){
+					if(data.result== "error"){
 						$('.note').css('color', 'red');
 						$('.note').html(data.message);
 						return false;
