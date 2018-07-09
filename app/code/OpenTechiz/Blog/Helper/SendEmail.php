@@ -46,13 +46,8 @@ class SendEmail extends \Magento\Framework\App\Helper\AbstractHelper
             ->sendMessage();
     }
 
-    public function reminderEmail()
+    public function reminderEmail($commentCount)
     {
-        $postObject = new \Magento\Framework\DataObject();
-        $data['name'] = $name;
-        $data['comment_count'] = 5;
-        $postObject->setData($data);
-
         $sender = [
                 'name' => 'Test Name',
                 'email' => 'tiensendemail@gmail.com'
@@ -60,14 +55,20 @@ class SendEmail extends \Magento\Framework\App\Helper\AbstractHelper
         
         $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
         //get admin's email
-        $email = $this->_scopeConfig->getValue('trans_email/ident_support/email', $storeScope);
-        $name  = $this->_scopeConfig->getValue('trans_email/ident_support/name', $storeScope);
+        $email = $this->_scopeConfig->getValue('trans_email/ident_general/email', $storeScope);
+        $name  = $this->_scopeConfig->getValue('trans_email/ident_general/name', $storeScope);
+
+        $postObject = new \Magento\Framework\DataObject();
+        $data['name'] = $name;
+        $data['comment_count'] = $commentCount;
+        $data['subject'] = "ADMIN: $commentCount comment(s) waiting for approval";
+        $postObject->setData($data);
 
         $transport = $this->_transportBuilder
             ->setTemplateIdentifier($this->_scopeConfig->getValue('blog/reminder/template', $storeScope))
             ->setTemplateOptions(
                 [
-                    'area' => \Magento\Backend\App\Area\FrontNameResolver::AREA_CODE,
+                    'area' => \Magento\Framework\App\Area::AREA_FRONTEND,
                     'store' => \Magento\Store\Model\Store::DEFAULT_STORE_ID,
                 ]
             )

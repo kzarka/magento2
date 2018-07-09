@@ -513,3 +513,43 @@ Stack trace:
 #2 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->execute()
 #3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
 #4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blo in /var/www/html/magento2/app/code/OpenTechiz/Blog/Helper/SendEmail.php on line 22
+[09-Jul-2018 02:56:48 UTC] PHP Parse error:  syntax error, unexpected 'parent' (T_STRING) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 35
+[09-Jul-2018 03:22:36 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Directory/Helper/Data/. in [Magento\Directory\Helper\Data\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Directo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Directo...')
+#2 [internal function]: spl_autoload_call('Magento\\Directo...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Directo...')
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Directo...')
+#5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Config\Config->_inheritInterception('Magento in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[09-Jul-2018 03:24:54 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Directory/Helper/Data/. in [Magento\Directory\Helper\Data\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Directo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Directo...')
+#2 [internal function]: spl_autoload_call('Magento\\Directo...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Directo...')
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Directo...')
+#5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Config\Config->_inheritInterception('Magento in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[09-Jul-2018 03:25:03 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Directory/Helper/Data/. in [Magento\Directory\Helper\Data\Proxy] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Directo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Directo...')
+#2 [internal function]: spl_autoload_call('Magento\\Directo...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Directo...')
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Directo...')
+#5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Config\Config->_inheritInterception('Magento in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[09-Jul-2018 03:37:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on null in /var/www/html/magento2/app/code/OpenTechiz/Blog/Helper/SendEmail.php:65
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Mail.php(40): OpenTechiz\Blog\Helper\SendEmail->reminderEmail(5)
+#1 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Mail/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Mail->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->execute()
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->___callParent('dispatch', Array)
+#5 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/Develo in /var/www/html/magento2/app/code/OpenTechiz/Blog/Helper/SendEmail.php on line 65
+[09-Jul-2018 03:41:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getData() on null in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Mail.php:45
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Mail/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Mail->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->Magento\Framework\I in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Mail.php on line 45

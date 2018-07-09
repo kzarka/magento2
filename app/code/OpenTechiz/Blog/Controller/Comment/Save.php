@@ -31,7 +31,7 @@ class Save extends Action
         $this->_inlineTranslation = $inlineTranslation;
         $this->_transportBuilder = $transportBuilder;
         $this->_scopeConfig = $scopeConfig;
-        $this->_sendEmail = $sendEmail
+        $this->_sendEmail = $sendEmail;
         parent::__construct($context);
     }
 

@@ -1,4 +1,4 @@
-<!--@subject {{trans	"Your comment is waiting for approval"}} @-->
+<!--@subject {{var data.subject}} @-->
 <!--@vars {
 "var data.name":"User Name"
 } @-->
@@ -9,7 +9,7 @@
 	</tr>
 	<tr class="email-information">
 		<td>
-			{{trans "We have received your comment and should approve it to appear soon!"}}
+			{{trans "You have %comment_count comment(s) waiting for approval!" comment_count=$data.comment_count}}
 		</td>
 	</tr>
 </table>

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
     <template id="blog_comment_notification_email_template" label="New Order" file="comment_notification_email.html" type="html" module="OpenTechiz_Blog" area="frontend" />
-    <template id="comment_approval_reminder_email_template" label="New Order" file="reminder_email.html" type="html" module="OpenTechiz_Blog" area="adminhtml" />
+    <template id="comment_approval_reminder_email_template" label="New Order" file="reminder_email.html" type="html" module="OpenTechiz_Blog" area="frontend" />
 </config>
