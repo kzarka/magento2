@@ -25,6 +25,17 @@
             </div>
         </div>
         <div class="field required">
+            <label for="email" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Email') ?></span>
+            </label>
+
+            <div class="control">
+                <input type="email" id="email"
+                       name="email"
+                       class="input-text" width="50%">
+            </div>
+        </div>
+        <div class="field required">
             <label for="content" class="label">
                 <span><?php /* @escapeNotVerified */ echo __('Content') ?></span>
             </label>

@@ -14,32 +14,13 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $installer = $setup;
 
     	$installer->startSetup();
-    	if (version_compare($context->getVersion(), "1.1.6", "<")) {
-	    	/*
-	    	$table = $installer->getConnection()
-		        ->newTable($installer->getTable('opentechiz_blog_comment'))
-		        ->addColumn('comment_id', Table::TYPE_SMALLINT, null, [
-		            'identity' => true,
-		            'nullable' => false,
-		            'primary' => true,
-		        ], 'Comment ID')
-		        ->addColumn('content', Table::TYPE_TEXT, 255, ['nullable => false'], 'Comment Content')
-		        ->addColumn('author', Table::TYPE_TEXT, 255, ['nullable => false'], 'Author Comment')
-		        ->addColumn('post_id', Table::TYPE_SMALLINT, null, ['nullable' => false], 'Post ID')
-		        ->addColumn('creation_time', Table::TYPE_TIMESTAMP, null,[
-		        	'nullable' => false, 
-		        	'default' => Table::TIMESTAMP_INIT
-		        	], 'Comment Created At')
-		        ->setComment('Comment Table');
-			
-		    $installer->getConnection()->createTable($table);
-		    */
+    	if (version_compare($context->getVersion(), "1.2.5", "<")) {
 		    $tableName = $installer->getTable('opentechiz_blog_comment');
-            $installer->getConnection()->addColumn($tableName, 'is_active', [
-                'type' => Table::TYPE_SMALLINT,
+            $installer->getConnection()->addColumn($tableName, 'email', [
+                'type' => Table::TYPE_TEXT,
+                'length' => 100,
                 'nullable' => false,
-                'default' => 0,
-                'comment' => 'Is Comment Active?'
+                'comment' => 'Email'
             ]);
 		}
 

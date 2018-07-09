@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+    	<blog>
+    		<general>
+    			<template>blog_comment_notification_email_template</template>
+    		</general>
+    		<reminder>
+    			<template>comment_approval_reminder_email_template</template>
+    		</reminder>
+    	</blog>
+    </default>
+</config>

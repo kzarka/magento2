@@ -52,6 +52,13 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements CommentI
     /**
      * @{initialize}
      */
+    function getEmail(){
+        return $this->getData(self::EMAIL);
+    }
+    /**
+     * @{initialize}
+     */
+
     function getCreationTime(){
         return $this->getData(self::CREATION_TIME);
     }
@@ -77,6 +84,11 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements CommentI
     /**
      * @{initialize}
      */
+    function setEmail($email){
+        $this->setData(self::EMAIL,$email);
+        return $this;
+    }
+
     function setContent($content){
         $this->setData(self::CONTENT,$content);
         return $this;

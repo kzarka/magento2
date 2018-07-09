@@ -12,6 +12,7 @@ interface CommentInterface
     const COMMENT_ID                  = 'comment_id';
     const CONTENT                  = 'content';
     const AUTHOR                    = 'author';
+    const EMAIL						= "email";
     const POST_ID                  = 'post_id';
     const CREATION_TIME            = 'creation_time';
     const IS_ACTIVE					= 'is_active';
@@ -21,6 +22,8 @@ interface CommentInterface
 	function getContent();
 
 	function getAuthor();
+
+	function getEmail();
 
 	function getPostID();
 
@@ -33,6 +36,8 @@ interface CommentInterface
 	function setContent($content);
 
 	function setAuthor($author);
+
+	function setEmail($email);
 
 	function setPostID($postID);
 
