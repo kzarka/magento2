@@ -553,3 +553,12 @@ Stack trace:
 #2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
 #3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->___callParent('dispatch', Array)
 #4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Mail\Interceptor->Magento\Framework\I in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Mail.php on line 45
+[09-Jul-2018 07:03:53 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /var/www/html/magento2/app/code/Task5/AttributePractice/Controller/Index/Index.php on line 14
+[09-Jul-2018 07:04:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCustomShippingCharge() on null in /var/www/html/magento2/app/code/Task5/AttributePractice/Block/Test.php:17
+Stack trace:
+#0 /var/www/html/magento2/app/code/Task5/AttributePractice/view/frontend/templates/test.phtml(2): Task5\AttributePractice\Block\Test->getAttributeData()
+#1 /var/www/html/magento2/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/var/www/html/m...')
+#2 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(270): Magento\Framework\View\TemplateEngine\Php->render(Object(Task5\AttributePractice\Block\Test), '/var/www/html/m...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/View/Element/Template.php(300): Magento\Framework\View\Element\Template->fetchView('/var/www/html/m...')
+#4 /var/www/html/magento2/vendor/magento/framework/View/Element/AbstractBlock.php(667): Magento\Framework\View\Element\Template->_toHtml()
+#5 /var/www/html/magento2/vendor/magento/framework/View/Layout.php(558): Magento\Framework in /var/www/html/magento2/app/code/Task5/AttributePractice/Block/Test.php on line 17
