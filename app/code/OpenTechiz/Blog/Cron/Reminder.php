@@ -32,10 +32,13 @@ class Reminder {
         $commentCount = $comments->count();
         // get admins list
         $admins = $this->_userCollection->create();
-        foreach ($admins as $admin) {
-            $email = $admin->getEmail();
-            $name = $admin->getUserName();
-            $this->_sendEmail->reminderEmail($commentCount, $email, $name);
+        if($commentCount>0 && $admins->count()>0)
+        {
+            foreach ($admins as $admin) {
+                $email = $admin->getEmail();
+                $name = $admin->getUserName();
+                $this->_sendEmail->reminderEmail($commentCount, $email, $name);
+            }
         }
     }
 

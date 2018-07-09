@@ -19,6 +19,7 @@ define([
 			}).done(function(data){
 				var comments = data.items;
 				var template = mageTemplate('#blog-comment');
+				$('ul#data').empty();
 				comments.forEach(function(cmt){
 					var newField = template({
 			            cmt: cmt

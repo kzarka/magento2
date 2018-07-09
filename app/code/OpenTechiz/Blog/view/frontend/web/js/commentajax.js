@@ -18,14 +18,12 @@ define([
 			if(dataForm.valid()){
 				event.preventDefault();
 				var param = dataForm.serialize();
-				alert(param);
 				$.ajax({
 					showLoader: true,
 					url: AjaxCommentPostUrl,
 					data: param,
 					type: 'POST'
 				}).done(function(data){
-					//console.log(data);
 					if(data.result== "error"){
 						$('.note').css('color', 'red');
 						$('.note').html(data.message);
