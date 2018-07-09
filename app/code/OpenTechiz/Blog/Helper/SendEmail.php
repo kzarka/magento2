@@ -21,16 +21,19 @@ class SendEmail extends \Magento\Framework\App\Helper\AbstractHelper
     
     public function approvalEmail($email, $name)
     {
+        $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE; 
         $postObject = new \Magento\Framework\DataObject();
         $data['name'] = $name;
         $postObject->setData($data);
 
+        $senderEmail = $this->_scopeConfig->getValue('trans_email/ident_general/email', $storeScope);
+        $senderName = $this->_scopeConfig->getValue('trans_email/ident_general/name', $storeScope);
         $sender = [
-                'name' => 'Test Name',
-                'email' => 'tiensendemail@gmail.com'
-            ];
+            'name' => $senderName,
+            'email' => $senderEmail
+        ];
 
-        $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE; 
+        
         $transport = $this->_transportBuilder
             ->setTemplateIdentifier($this->_scopeConfig->getValue('blog/general/template', $storeScope))
             ->setTemplateOptions(
@@ -46,17 +49,16 @@ class SendEmail extends \Magento\Framework\App\Helper\AbstractHelper
             ->sendMessage();
     }
 
-    public function reminderEmail($commentCount)
-    {
-        $sender = [
-                'name' => 'Test Name',
-                'email' => 'tiensendemail@gmail.com'
-            ];
-        
+    public function reminderEmail($commentCount, $email, $name)
+    {   
         $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
-        //get admin's email
-        $email = $this->_scopeConfig->getValue('trans_email/ident_general/email', $storeScope);
-        $name  = $this->_scopeConfig->getValue('trans_email/ident_general/name', $storeScope);
+
+        $senderEmail = $this->_scopeConfig->getValue('trans_email/ident_general/email', $storeScope);
+        $senderName = $this->_scopeConfig->getValue('trans_email/ident_general/name', $storeScope);
+        $sender = [
+            'name' => $senderName,
+            'email' => $senderEmail
+        ];
 
         $postObject = new \Magento\Framework\DataObject();
         $data['name'] = $name;
