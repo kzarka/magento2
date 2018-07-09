@@ -1,3 +1,18 @@
 
 <H4><?php echo __('Lastest Comment For Post ID ') . $block->getPostID() ?></H4>
-<div id="data">Loading...</div>
+
+<ul class="blog-post-list" id="data">
+</ul>
+
+<script id="blog-comment" type="text/x-magento-template">
+    <li class="blog-post-list-item"><%- cmt.author %>
+		<div class="blog-post-item-content"><%- cmt.content %></div>
+		<div class="blog-post-item-meta">
+			<small>Created at: <%- cmt.creation_time %></small>
+		</div>
+	</li>
+</script>
+</ul>
+
+
+

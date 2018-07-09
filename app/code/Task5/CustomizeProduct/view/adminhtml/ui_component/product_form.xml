@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="stock_data">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Manage Stock</item>
+                <item name="sortOrder" xsi:type="number">100</item>
+            </item>
+         </argument>
+        <!--field sets can be nested -->
+        <field name="manage_stock" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="rawOptions" xsi:type="boolean">true</item>
+                    <item name="value" xsi:type="object">Magento\CatalogInventory\Model\Source\StockConfiguration</item>
+                </item>
+            </argument>
+            <settings>
+                <scopeLabel>[GLOBAL]</scopeLabel>
+                <label translate="true">Manage Stock Edited</label>
+                <dataScope>manage_stock</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Magento\Config\Model\Config\Source\Yesno"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
