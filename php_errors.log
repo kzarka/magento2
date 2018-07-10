@@ -579,3 +579,51 @@ Stack trace:
 #3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Directo...')
 #4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Directo...')
 #5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Config\Config->_inheritInterception('Magento in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[10-Jul-2018 07:53:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::getId() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit.php:66
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit/Interceptor.php(24): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/module-backend/App/AbstractAction.php(229): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit\Inte in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit.php on line 66
+[10-Jul-2018 07:53:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::getId() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit.php:66
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit/Interceptor.php(24): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/module-backend/App/AbstractAction.php(229): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit\Inte in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit.php on line 66
+[10-Jul-2018 07:55:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::getID() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit.php:66
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit/Interceptor.php(24): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/module-backend/App/AbstractAction.php(229): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Adminhtml\Comment\Edit\Inte in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Edit.php on line 66
+[10-Jul-2018 08:15:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function create() on null in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Save.php:39
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Adminhtml\Comment\Save->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Adminhtml\Comment\Save\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/module-backend/App/AbstractAction.php(229): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Adminhtml\Comment\Save\Interceptor->___callParent('dispatch', Array)
+#5 / in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Save.php on line 39
+[10-Jul-2018 08:52:10 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 15
+[10-Jul-2018 09:07:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Magento\Framework\Model\AbstractModel::__construct() must be an instance of Magento\Framework\Registry, array given, called in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 21 and defined in /var/www/html/magento2/vendor/magento/framework/Model/AbstractModel.php:171
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php(21): Magento\Framework\Model\AbstractModel->__construct(Object(Magento\Framework\Model\Context), Array)
+#1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(111): OpenTechiz\Blog\Model\Post->__construct(Object(Magento\Framework\Model\Context), Object(Magento\Backend\Model\Url), Array)
+#2 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(66): Magento\Framework\ObjectManager\Factory\AbstractFactory->createObject('OpenTechiz\\Blog...', Array)
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/ObjectManager.php(56) in /var/www/html/magento2/vendor/magento/framework/Model/AbstractModel.php on line 171
+[10-Jul-2018 09:14:15 UTC] PHP Fatal error:  Uncaught Error: Cannot instantiate abstract class Magento\Framework\Model\ResourceModel\AbstractResource in /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php:50
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/ObjectManager/ObjectManager.php(70): Magento\Framework\ObjectManager\Factory\Dynamic\Developer->create('Magento\\Framewo...')
+#1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(144): Magento\Framework\ObjectManager\ObjectManager->get('Magento\\Framewo...')
+#2 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(230): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgument(Array, 'Magento\\Framewo...', NULL, 'resource', 'OpenTechiz\\Blog...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(34): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgumentsInRuntime('OpenTechiz\\Blog...', Array, Ar in /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 50
+[10-Jul-2018 09:16:32 UTC] PHP Fatal error:  Uncaught Error: Cannot instantiate abstract class Magento\Framework\Model\ResourceModel\AbstractResource in /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php:50
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/ObjectManager/ObjectManager.php(70): Magento\Framework\ObjectManager\Factory\Dynamic\Developer->create('Magento\\Framewo...')
+#1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(144): Magento\Framework\ObjectManager\ObjectManager->get('Magento\\Framewo...')
+#2 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(230): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgument(Array, 'Magento\\Framewo...', NULL, 'resource', 'OpenTechiz\\Blog...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(34): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgumentsInRuntime('OpenTechiz\\Blog...', Array, Ar in /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 50

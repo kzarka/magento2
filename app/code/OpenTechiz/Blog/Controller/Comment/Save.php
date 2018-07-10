@@ -7,6 +7,8 @@ class Save extends Action
     /**
      * @var \Magento\Framework\Controller\Result\JsonFactory
      */
+    protected $_commentCollectionFactory;
+
     protected $_resultJsonFactory;
 
     protected $_inlineTranslation;
@@ -18,6 +20,7 @@ class Save extends Action
     protected $_sendEmail;
 
     function __construct(
+        \OpenTechiz\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\Translate\Inline\StateInterface $inlineTranslation,
         \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder,
@@ -26,6 +29,7 @@ class Save extends Action
         \Magento\Framework\App\Action\Context $context
     )
     {
+        $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->_resultFactory = $context->getResultFactory();
         $this->_resultJsonFactory = $resultJsonFactory;
         $this->_inlineTranslation = $inlineTranslation;
@@ -66,7 +70,7 @@ class Save extends Action
             $post_id = $postData['post_id'];
             $email = $postData['email'];
 
-            $comment = $this->_objectManager->create('OpenTechiz\Blog\Model\Comment');
+            $comment = $this->_commentCollectionFactory->create();
             $comment->setAuthor($author);
             $comment->setContent($content);
             $comment->setPostID($post_id);

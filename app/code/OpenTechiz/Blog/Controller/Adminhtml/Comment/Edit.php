@@ -13,17 +13,19 @@ class Edit extends \Magento\Backend\App\Action
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $resultPageFactory;
-    /**
-     * @param Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
-     * @param \Magento\Framework\Registry $registry
-     */
+    
+    protected $_commentCollectionFactory;
+
     public function __construct(
         Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
+        \OpenTechiz\Blog\Model\CommentFactory $commentCollectionFactory,
+        \Magento\Backend\Model\Session $backendSession,
         \Magento\Framework\Registry $registry
     ) {
+        $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->resultPageFactory = $resultPageFactory;
+        $this->_backendSession = $backendSession;
         $this->_coreRegistry = $registry;
         parent::__construct($context);
     }
@@ -58,7 +60,7 @@ class Edit extends \Magento\Backend\App\Action
     public function execute()
     {
         $id = $this->getRequest()->getParam('comment_id');
-        $model = $this->_objectManager->create('OpenTechiz\Blog\Model\Comment');
+        $model = $this->_commentCollectionFactory->create();
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
@@ -68,7 +70,7 @@ class Edit extends \Magento\Backend\App\Action
                 return $resultRedirect->setPath('*/*/');
             }
         }
-        $data = $this->_objectManager->get('Magento\Backend\Model\Session')->getFormData(true);
+        $data = $this->_backendSession->getFormData(true);
         if (!empty($data)) {
             $model->setData($data);
         }

@@ -10,72 +10,67 @@ class Save extends \Magento\Backend\App\Action
 {
     
     const ADMIN_RESOURCE = 'OpenTechiz_Blog::post';    
-    protected $dataProcessor;    
-    protected $dataPersistor;
-    protected $model;
+
+    protected $_postCollectionFactory;
+
+    protected $_backendSession;
 
     public function __construct(
-        Action\Context $context,
-        PostDataProcessor $dataProcessor,
-        Post $model,
-        DataPersistorInterface $dataPersistor
-    ) {
-        $this->dataProcessor = $dataProcessor;
-        $this->dataPersistor = $dataPersistor;
-        $this->model = $model;
+        \OpenTechiz\Blog\Model\PostFactory $postCollectionFactory,
+        \Magento\Backend\Model\Session $backendSession,
+        Action\Context $context
+    )
+    {
+        $this->_postCollectionFactory = $postCollectionFactory;
+        $this->_backendSession = $backendSession;
         parent::__construct($context);
     }
-
+    /**
+     * {@inheritdoc}
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('OpenTechiz_Blog::save');
+    }
+    /**
+     * Save action
+     *
+     * @return \Magento\Framework\Controller\ResultInterface
+     */
     public function execute()
     {
-        
         $data = $this->getRequest()->getPostValue();
+        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
-
-            $data = $this->dataProcessor->filter($data);
-            
-
+            /** @var \OpenTechiz\Blog\Model\Comment $model */
+            $model = $this->_postCollectionFactory->create();
             $id = $this->getRequest()->getParam('post_id');
             if ($id) {
-                $this->model->load($id);
+                $model->load($id);
             }
-           
-
-            $this->model->setTitle($data['title']);
-            $this->model->setContent($data['content']);
-            $this->model->setUrlKey($data['url_key']);
-            $this->model->setIsActive($data['is_active']);
-
+            $model->setData($data);
             $this->_eventManager->dispatch(
                 'blog_post_prepare_save',
-                ['post' => $this->model, 'request' => $this->getRequest()]
+                ['post' => $model, 'request' => $this->getRequest()]
             );
-
-            if (!$this->dataProcessor->validate($data)) {
-                return $resultRedirect->setPath('*/*/edit', ['id' => $this->model->getId(), '_current' => true]);
-            }
-
             try {
-                $this->model->save();
-                $this->messageManager->addSuccess(__('You saved the Post.'));
-                $this->dataPersistor->clear('post');
+                $model->save();
+                $this->messageManager->addSuccess(__('You saved this Post.'));
+                $this->_backendSession->setFormData(false);
                 if ($this->getRequest()->getParam('back')) {
-                    return $resultRedirect->setPath(
-                        '*/*/edit',
-                        ['id' => $this->model->getId(),
-                         '_current' => true]
-                    );
+                    return $resultRedirect->setPath('*/*/edit', ['post_id' => $model->getId(), '_current' => true]);
                 }
                 return $resultRedirect->setPath('*/*/');
-            } catch (LocalizedException $e) {
+            } catch (\Magento\Framework\Exception\LocalizedException $e) {
+                $this->messageManager->addError($e->getMessage());
+            } catch (\RuntimeException $e) {
                 $this->messageManager->addError($e->getMessage());
             } catch (\Exception $e) {
-                $this->messageManager->addException($e, __('Something went wrong while saving the Post.'));
+                $this->messageManager->addException($e, __('Something went wrong while saving the post.'));
             }
-
-            $this->dataPersistor->set('post', $data);
-            return $resultRedirect->setPath('*/*/edit', ['id' => $this->getRequest()->getParam('id')]);
+            $this->_getSession()->setFormData($data);
+            return $resultRedirect->setPath('*/*/edit', ['post_id' => $this->getRequest()->getParam('post_id')]);
         }
         return $resultRedirect->setPath('*/*/');
     }

@@ -2,28 +2,25 @@
 namespace OpenTechiz\Blog\Model;
 use OpenTechiz\Blog\Api\Data\PostInterface;
 use Magento\Framework\DataObject\IdentityInterface;
-
 class Post extends \Magento\Framework\Model\AbstractModel implements PostInterface,IdentityInterface
 {
-	const STATUS_ENABLED = 1;
-	const STATUS_DISABLED =0;
-	const CACHE_TAG='opentechiz_blog_post';
-
-	function _construct()
-	{
-		$this->_init('OpenTechiz\Blog\Model\ResourceModel\Post');
-	}
-	
+    const STATUS_ENABLED = 1;
+    const STATUS_DISABLED =0;
+    const CACHE_TAG='opentechiz_blog_post';
+    function _construct()
+    {
+        $this->_init('OpenTechiz\Blog\Model\ResourceModel\Post');
+    }
+    
     public function getAvailableStatuses()
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
-	
+    
     public function checkUrlKey($url_key)
     {
         return $this->_getResource()->checkUrlKey($url_key);
     }
-
      /**
      * Get identities
      *

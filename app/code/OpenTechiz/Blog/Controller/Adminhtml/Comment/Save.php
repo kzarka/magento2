@@ -4,11 +4,18 @@ use Magento\Backend\App\Action;
 use Magento\TestFramework\ErrorLog\Logger;
 class Save extends \Magento\Backend\App\Action
 {
-    /**
-     * @param Action\Context $context
-     */
-    public function __construct(Action\Context $context)
+    protected $_commentCollectionFactory;
+
+    protected $_backendSession;
+
+    public function __construct(
+        \OpenTechiz\Blog\Model\CommentFactory $commentCollectionFactory,
+        \Magento\Backend\Model\Session $backendSession,
+        Action\Context $context
+    )
     {
+        $this->_commentCollectionFactory = $commentCollectionFactory;
+        $this->_backendSession = $backendSession;
         parent::__construct($context);
     }
     /**
@@ -30,8 +37,8 @@ class Save extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
             /** @var \OpenTechiz\Blog\Model\Comment $model */
-            $model = $this->_objectManager->create('OpenTechiz\Blog\Model\Comment');
-            $id = $this->getRequest()->getParam('comment');
+            $model = $this->_commentCollectionFactory->create();
+            $id = $this->getRequest()->getParam('comment_id');
             if ($id) {
                 $model->load($id);
             }
@@ -43,7 +50,7 @@ class Save extends \Magento\Backend\App\Action
             try {
                 $model->save();
                 $this->messageManager->addSuccess(__('You saved this Comment.'));
-                $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData(false);
+                $this->_backendSession->setFormData(false);
                 if ($this->getRequest()->getParam('back')) {
                     return $resultRedirect->setPath('*/*/edit', ['comment_id' => $model->getId(), '_current' => true]);
                 }
@@ -53,7 +60,7 @@ class Save extends \Magento\Backend\App\Action
             } catch (\RuntimeException $e) {
                 $this->messageManager->addError($e->getMessage());
             } catch (\Exception $e) {
-                $this->messageManager->addException($e, __('Something went wrong while saving the post.'));
+                $this->messageManager->addException($e, __('Something went wrong while saving the comment.'));
             }
             $this->_getSession()->setFormData($data);
             return $resultRedirect->setPath('*/*/edit', ['comment_id' => $this->getRequest()->getParam('comment_id')]);
