@@ -4,14 +4,14 @@ use Magento\Backend\App\Action;
 use Magento\TestFramework\ErrorLog\Logger;
 class Delete extends \Magento\Backend\App\Action
 {
-    protected $_postCollectionFactory;
+    protected $_postFactory;
 
     function __construct(
-        \OpenTechiz\Blog\Model\PostFactory $postCollectionFactory,
-        \Magento\Framework\App\Action\Context $context
+        \OpenTechiz\Blog\Model\PostFactory $postFactory,
+        \Magento\Backend\App\Action\Context $context
     )
     {
-        $this->_postCollectionFactory = $postCollectionFactory;
+        $this->_postFactory = $postFactory;
         parent::__construct($context);
     }
 
@@ -31,7 +31,7 @@ class Delete extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($id) {
             try {
-                $model = $this->_postCollectionFactory->create();
+                $model = $this->_postFactory->create();
                 $model->load($id);
                 $model->delete();
                 $this->messageManager->addSuccess(__('The post has been deleted.'));

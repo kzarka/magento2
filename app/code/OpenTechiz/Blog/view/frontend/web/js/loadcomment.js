@@ -17,9 +17,10 @@ define([
 					post_id: AjaxPostId
 				}
 			}).done(function(data){
-				var comments = data.items;
 				var template = mageTemplate('#blog-comment');
 				$('ul#data').empty();
+				if(data==false) return false;
+				var comments = data.items;
 				comments.forEach(function(cmt){
 					var newField = template({
 			            cmt: cmt

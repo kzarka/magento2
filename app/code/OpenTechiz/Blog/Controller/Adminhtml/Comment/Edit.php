@@ -14,16 +14,16 @@ class Edit extends \Magento\Backend\App\Action
      */
     protected $resultPageFactory;
     
-    protected $_commentCollectionFactory;
+    protected $_commentFactory;
 
     public function __construct(
         Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \OpenTechiz\Blog\Model\CommentFactory $commentCollectionFactory,
+        \OpenTechiz\Blog\Model\CommentFactory $commentFactory,
         \Magento\Backend\Model\Session $backendSession,
         \Magento\Framework\Registry $registry
     ) {
-        $this->_commentCollectionFactory = $commentCollectionFactory;
+        $this->_commentFactory = $commentFactory;
         $this->resultPageFactory = $resultPageFactory;
         $this->_backendSession = $backendSession;
         $this->_coreRegistry = $registry;
@@ -60,7 +60,7 @@ class Edit extends \Magento\Backend\App\Action
     public function execute()
     {
         $id = $this->getRequest()->getParam('comment_id');
-        $model = $this->_commentCollectionFactory->create();
+        $model = $this->_commentFactory->create();
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {

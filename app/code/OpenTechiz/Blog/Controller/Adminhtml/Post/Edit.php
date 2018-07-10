@@ -18,18 +18,18 @@ class Edit extends \Magento\Backend\App\Action
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
      * @param \Magento\Framework\Registry $registry
      */
-    protected $_postCollectionFactory;
+    protected $_postFactory;
 
     protected $_backendSession;
 
     function __construct(
         Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \OpenTechiz\Blog\Model\PostFactory $postCollectionFactory,
+        \OpenTechiz\Blog\Model\PostFactory $postFactory,
         \Magento\Backend\Model\Session $backendSession,
         \Magento\Framework\Registry $registry
     ) {
-        $this->_postCollectionFactory = $postCollectionFactory;
+        $this->_postFactory = $postFactory;
         $this->resultPageFactory = $resultPageFactory;
         $this->_backendSession = $backendSession;
         $this->_coreRegistry = $registry;
@@ -66,7 +66,7 @@ class Edit extends \Magento\Backend\App\Action
     public function execute()
     {
         $id = $this->getRequest()->getParam('post_id');
-        $model = $this->_postCollectionFactory->create();
+        $model = $this->_postFactory->create();
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {

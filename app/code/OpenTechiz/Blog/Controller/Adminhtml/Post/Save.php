@@ -11,17 +11,17 @@ class Save extends \Magento\Backend\App\Action
     
     const ADMIN_RESOURCE = 'OpenTechiz_Blog::post';    
 
-    protected $_postCollectionFactory;
+    protected $_postFactory;
 
     protected $_backendSession;
 
     public function __construct(
-        \OpenTechiz\Blog\Model\PostFactory $postCollectionFactory,
+        \OpenTechiz\Blog\Model\PostFactory $postFactory,
         \Magento\Backend\Model\Session $backendSession,
         Action\Context $context
     )
     {
-        $this->_postCollectionFactory = $postCollectionFactory;
+        $this->_postFactory = $postFactory;
         $this->_backendSession = $backendSession;
         parent::__construct($context);
     }
@@ -44,7 +44,7 @@ class Save extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
             /** @var \OpenTechiz\Blog\Model\Comment $model */
-            $model = $this->_postCollectionFactory->create();
+            $model = $this->_postFactory->create();
             $id = $this->getRequest()->getParam('post_id');
             if ($id) {
                 $model->load($id);

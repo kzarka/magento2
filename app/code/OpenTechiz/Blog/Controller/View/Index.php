@@ -8,7 +8,7 @@ class Index extends Action
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory,
-        \OpenTechiz\Blog\Helper\Post $postHelper;
+        \OpenTechiz\Blog\Helper\Post $postHelper
     )
     {
         $this->_resultForwardFactory = $resultForwardFactory;

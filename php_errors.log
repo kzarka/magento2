@@ -627,3 +627,51 @@ Stack trace:
 #1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(144): Magento\Framework\ObjectManager\ObjectManager->get('Magento\\Framewo...')
 #2 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php(230): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgument(Array, 'Magento\\Framewo...', NULL, 'resource', 'OpenTechiz\\Blog...')
 #3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(34): Magento\Framework\ObjectManager\Factory\AbstractFactory->resolveArgumentsInRuntime('OpenTechiz\\Blog...', Array, Ar in /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 50
+[10-Jul-2018 10:05:08 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/View/Index.php on line 11
+[10-Jul-2018 10:06:29 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR), expecting ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/SaveComment.php on line 15
+[10-Jul-2018 10:43:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::setAuthor() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php:85
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Control in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 85
+[10-Jul-2018 10:47:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::setAuthor() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php:85
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Control in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 85
+[10-Jul-2018 11:34:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::setAuthor() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php:84
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Control in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 84
+[10-Jul-2018 11:43:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OpenTechiz\Blog\Model\ResourceModel\Comment\Collection::setAuthor() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php:84
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Save/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Save->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Save\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Control in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 84
+[10-Jul-2018 11:50:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function count() on array in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php:49
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Load/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Load->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Load\Interceptor->Magento\Framework\In in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Load.php on line 49
+[10-Jul-2018 12:52:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Customer\Model\Data\Customer::getData() in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Test.php:49
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Comment/Test/Interceptor.php(24): OpenTechiz\Blog\Controller\Comment\Test->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Comment\Test\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Comment\Test\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Comment\Test\Int in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Test.php on line 49
+[10-Jul-2018 12:53:29 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 400560128 bytes) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Test.php on line 49
+[10-Jul-2018 13:04:52 UTC] PHP Parse error:  syntax error, unexpected ';' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Save.php on line 70
+[10-Jul-2018 14:20:05 UTC] PHP Parse error:  syntax error, unexpected '$post' (T_VARIABLE) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Comment/Test.php on line 47
+[10-Jul-2018 15:23:29 UTC] PHP Fatal error:  Cannot declare class OpenTechiz\Blog\Model\ResourceModel\Comment, because the name is already in use in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/ResourceModel/Notification.php on line 0

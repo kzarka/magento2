@@ -36,7 +36,8 @@ class CommentList extends \Magento\Framework\View\Element\Template
 		if(!$this->hasData("cmt")) {
 			$comments = $this->_commentCollectionFactory
 				->create()
-				->addFilter('post_id', $post_id)
+				->addFieldToFilter('post_id', $post_id)
+				->addFieldToFilter('is_active', 1)
 				->addOrder(
 					CommentInterface::CREATION_TIME,
 					CommentCollection::SORT_ORDER_DESC

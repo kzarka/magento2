@@ -4,14 +4,14 @@ use Magento\Backend\App\Action;
 use Magento\TestFramework\ErrorLog\Logger;
 class Delete extends \Magento\Backend\App\Action
 {
-    protected $_commentCollectionFactory;
+    protected $_commentFactory;
 
     function __construct(
-        \OpenTechiz\Blog\Model\CommentFactory $commentCollectionFactory,
-        \Magento\Framework\App\Action\Context $context
+        \OpenTechiz\Blog\Model\CommentFactory $commentFactory,
+        \Magento\Backend\App\Action\Context $context
     )
     {
-        $this->_commentCollectionFactory = $commentCollectionFactory;
+        $this->_commentFactory = $commentFactory;
         parent::__construct($context);
     }
 
@@ -31,7 +31,7 @@ class Delete extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($id) {
             try {
-                $model = $this->commentCollectionFactory->create();
+                $model = $this->_commentFactory->create();
                 $model->load($id);
                 $model->delete();
                 $this->messageManager->addSuccess(__('The comment has been deleted.'));

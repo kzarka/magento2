@@ -25,19 +25,13 @@ class UpgradeSchema implements UpgradeSchemaInterface
             ->addColumn('content', Table::TYPE_TEXT, 255, ['nullable => false'], 'Notification Content')
             ->addColumn('user_id', Table::TYPE_SMALLINT, null, ['nullable' => false], 'User ID')
             ->addColumn('post_id', Table::TYPE_SMALLINT, null, ['nullable' => false], 'Post ID')
-            ->addColumn('creation_time', Table::TYPE_TIMESTAMP, null, [], 'Comment Created At')
+            ->addColumn('creation_time', Table::TYPE_TIMESTAMP, null,[
+                    'nullable' => false, 
+                    'default' => Table::TIMESTAMP_INIT
+                    ], 'Notification Created At')
             ->setComment('Comment Notification');
 
         $installer->getConnection()->createTable($table);
-        
-        // modified comment table
-        $tableName = $installer->getTable('opentechiz_blog_comment');
-            $installer->getConnection()->addColumn($tableName, 'user_id', [
-                'type' => Table::TYPE_SMALLINT,
-                'nullable' => true,
-                'default' => NULL,
-                'comment' => 'User ID'
-            ]);
 
         $installer->endSetup();
     }

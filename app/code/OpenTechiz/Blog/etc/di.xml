@@ -49,4 +49,5 @@
             </argument>
         </arguments>
     </type>
+    <preference for="Magento\Framework\View\Element\Template" type="OpenTechiz\Blog\Block\SaveComment" />
 </config>

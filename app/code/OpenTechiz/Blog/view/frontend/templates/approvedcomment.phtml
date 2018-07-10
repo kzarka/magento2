@@ -1,0 +1,32 @@
+<H4><?php echo __('Lastest Comment For Post ID ') . $block->getPostID() ?></H4>
+
+<ul class="blog-post-list" id="data">
+</ul>
+
+<script id="blog-comment" type="text/x-magento-template">
+    <li class="blog-post-list-item"><%- cmt.author %>
+		<div class="blog-post-item-content"><%- cmt.content %></div>
+		<div class="blog-post-item-meta">
+			<small>Created at: <%- cmt.creation_time %></small>
+		</div>
+	</li>
+</script>
+</ul>
+<?php
+$comments = $block->getComments();
+?>
+<?php if($comments->count()>0){ ?>
+<ul class="blog-post-list">
+<?php foreach ($comments as $cmt) { ?>
+	<li class="blog-post-list-item"><?php echo $cmt->getAuthor() ?>
+		<div class="blog-post-item-content"><?php echo $cmt->getContent() ?></div>
+		<div class="blog-post-item-meta">
+			<small>Created at: <?php echo $cmt->getCreationTime() ?></small>
+		</div>
+	</li>
+<?php } ?>
+</ul>
+<?php } else echo "No comment found!"; ?>
+
+
+

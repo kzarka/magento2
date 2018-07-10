@@ -4,17 +4,17 @@ use Magento\Backend\App\Action;
 use Magento\TestFramework\ErrorLog\Logger;
 class Save extends \Magento\Backend\App\Action
 {
-    protected $_commentCollectionFactory;
+    protected $_commentFactory;
 
     protected $_backendSession;
 
     public function __construct(
-        \OpenTechiz\Blog\Model\CommentFactory $commentCollectionFactory,
+        \OpenTechiz\Blog\Model\CommentFactory $commentFactory,
         \Magento\Backend\Model\Session $backendSession,
         Action\Context $context
     )
     {
-        $this->_commentCollectionFactory = $commentCollectionFactory;
+        $this->_commentFactory = $commentFactory;
         $this->_backendSession = $backendSession;
         parent::__construct($context);
     }
@@ -37,16 +37,18 @@ class Save extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
             /** @var \OpenTechiz\Blog\Model\Comment $model */
-            $model = $this->_commentCollectionFactory->create();
+            $model = $this->_commentFactory->create();
             $id = $this->getRequest()->getParam('comment_id');
             if ($id) {
                 $model->load($id);
             }
-            $model->setData($data);
+            else $model->setData($data);
             $this->_eventManager->dispatch(
                 'blog_comment_prepare_save',
                 ['comment' => $model, 'request' => $this->getRequest()]
             );
+            $model->setData($data);
+
             try {
                 $model->save();
                 $this->messageManager->addSuccess(__('You saved this Comment.'));

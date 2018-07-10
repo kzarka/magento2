@@ -7,7 +7,6 @@ define([
 
 	function main(config, element) {
 		var $element = $(element);
-		//console.log(loadcomment);
 		loadcomment.loadComments(config);
 		var AjaxCommentPostUrl = config.AjaxCommentPostUrl;
 
