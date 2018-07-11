@@ -1,0 +1,76 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <!--delete link-->
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="authorization-link" remove="true" />
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="advanced-search-link" remove="true"/>
+
+        <!--custom link-->
+        <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="custom-aboutus">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">About us</argument>
+                    <argument name="path" xsi:type="string" translate="true"></argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link" name="custom-blog">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Blog</argument>
+                    <argument name="path" xsi:type="string" translate="true"></argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link" name="custom-google">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">google</argument>
+                    <argument name="path" xsi:type="string" translate="true">http://google.com</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <!--// xoa lable mac dinh-->
+        <referenceBlock name="header" remove="true"/>
+        <!--custom iamage -->
+        <referenceBlock name="logo" >
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">200</argument>
+                <argument name="logo_img_height" xsi:type="number">200</argument>
+            </arguments>
+        </referenceBlock>
+        <!--soo dien thoai header-->
+        <referenceContainer name="header-wrapper" htmlId="contact">
+            <container name="contact" htmlTag="div" htmlId="contact">
+                <block class="OpenTechiz\Blog\Block\SaveComment" name="detail_pr" template="OpenTechiz_Blog::notification.phtml" before="top.search">
+                </block>
+            </container>
+        </referenceContainer>
+
+        <!--remove link footer-->
+        <referenceBlock name="footer_links" remove="true"/>
+        <!--chen footer block-->
+
+
+
+        <!--Chi tiet san pham-->
+        <referenceBlock name="advanced-search-link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <move element="product.info.stock.sku" destination="div.sidebar.additional" as="sku" before="-"/>
+        <move element="product.price.final" destination="div.sidebar.additional" as="final" after="sku"/>
+        <move element="product.info.simple" destination="div.sidebar.additional" as="info_sp" after="final"/>
+        <move element="product.info" destination="div.sidebar.additional" as="info_pr" after="info_sp"/>
+        <move element="product.info.addto" destination="div.sidebar.additional" as="info_addto" after="info_pr"/>
+        <move element="product.info.social" destination="div.sidebar.additional" as="info_social" after="info_addto"/>
+
+
+
+
+    </body>
+</page>

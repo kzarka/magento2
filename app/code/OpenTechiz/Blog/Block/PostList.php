@@ -3,7 +3,8 @@ namespace OpenTechiz\Blog\Block;
 use OpenTechiz\Blog\Api\Data\PostInterface;
 use OpenTechiz\Blog\Model\ResourceModel\Post\Collection as PostCollection;
 
-class PostList extends \Magento\Framework\View\Element\Template
+class PostList extends \Magento\Framework\View\Element\Template implements
+    \Magento\Framework\DataObject\IdentityInterface
 {
 	protected $_postCollectionFactory;
 
@@ -22,7 +23,7 @@ class PostList extends \Magento\Framework\View\Element\Template
 		if(!$this->hasData("posts")) {
 			$posts = $this->_postCollectionFactory
 				->create()
-				->addFilter('is_active', 1)
+				->addFieldToFilter('is_active', 1)
 				->addOrder(
 					PostInterface::CREATION_TIME,
 					PostCollection::SORT_ORDER_DESC
@@ -32,4 +33,12 @@ class PostList extends \Magento\Framework\View\Element\Template
 		return $this->getData("posts");
 	}
 
+	public function getIdentities()
+	{
+		$identities = [];
+		foreach ($this->getPosts() as $post) {
+			$identities = array_merge($identities, $post->getIdentities());
+		}
+		return $identities;
+	}
 }

@@ -2,11 +2,16 @@
 namespace OpenTechiz\Blog\Model;
 use OpenTechiz\Blog\Api\Data\PostInterface;
 use Magento\Framework\DataObject\IdentityInterface;
+
+use Magento\Framework\Api\AttributeValueFactory;
+use Magento\Framework\Api\ExtensionAttributesFactory;
 class Post extends \Magento\Framework\Model\AbstractModel implements PostInterface,IdentityInterface
 {
     const STATUS_ENABLED = 1;
     const STATUS_DISABLED =0;
     const CACHE_TAG='opentechiz_blog_post';
+    const CACHE_POST_COMMENT_TAG = "opentechiz_blog_post_comment";
+
     function _construct()
     {
         $this->_init('OpenTechiz\Blog\Model\ResourceModel\Post');
@@ -28,7 +33,7 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
      */
     public function getIdentities()
     {
-        return [self::CACHE_TAG . '_' . $this->getId()];
+        return [self::CACHE_TAG . '_' . $this->getID()];
     }
     /**
      * @{initialize}

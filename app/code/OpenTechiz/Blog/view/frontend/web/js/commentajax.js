@@ -1,15 +1,19 @@
 define([
 	"jquery",
 	"jquery/ui",
-	"OpenTechiz_Blog/js/loadcomment"
-], function($, ui, loadcomment) {
+	"loadcomment",
+	"loadnotification"
+], function($, ui, loadcomment, notification) {
 	"use strict";
 
 	function main(config, element) {
 		var $element = $(element);
 		loadcomment.loadComments(config);
+		
 		var AjaxCommentPostUrl = config.AjaxCommentPostUrl;
 
+		var page = 1;
+		notification.loadNotifications(config, page);
 		var dataForm = $('#comment-form');
 		dataForm.mage('validation', {});
 
@@ -34,6 +38,12 @@ define([
 					loadcomment.loadComments(config);
 				});
 			}
+		});
+
+		$(document).on('click', '#load-more',function(){
+			event.preventDefault();
+			page++;
+			notification.loadNotifications(config, page);
 		});
 	};
 	return main;

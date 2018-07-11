@@ -36,6 +36,10 @@ class SaveComment extends \Magento\Framework\View\Element\Template
 		return $this->_request->getParam('post_id', false);
 	}
 
+	public function getAjaxNotificationLoadUrl()
+	{
+		return '/magento2/blog/notification/load';
+	}
 	public function isLoggedIn()
 	{
 		return $this->_customerSession->isLoggedIn();

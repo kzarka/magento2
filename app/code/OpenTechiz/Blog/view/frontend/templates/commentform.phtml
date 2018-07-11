@@ -1,14 +1,4 @@
-<script type="text/x-magento-init">
-    {
-        "*": {
-            "OpenTechiz_Blog/js/commentajax": {
-                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>",
-                "AjaxCommentLoadUrl": "<?php echo $block->getAjaxUrl() ?>",
-                "AjaxPostId": "<?php echo $block->getPostID(); ?>"
-            }
-        }
-    }
-</script>
+
 <?php $helper = $this->helper('OpenTechiz\Blog\Helper\UserInfo'); ?>
 <form class="form" method="post" id="comment-form">
     <fieldset class="fieldset">

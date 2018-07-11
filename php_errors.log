@@ -720,3 +720,31 @@ Stack trace:
 #2 /var/www/html/magento2/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
 #3 /var/www/html/magento2/generated/code/Magento/Framework/Event/Manager/Proxy.php(95): Magento\Framework\Event\Manager->dispatch('blog_comment_pr...', Array)
 #4 /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Adminhtml/Comment/Save.php(48): Magento\Framework\Event in /var/www/html/magento2/app/code/OpenTechiz/Blog/Observer/Approval.php on line 37
+[11-Jul-2018 05:01:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function clean() on null in /var/www/html/magento2/vendor/magento/framework/App/Cache/TypeList.php:194
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/App/Cache/Manager.php(90): Magento\Framework\App\Cache\TypeList->cleanType('opentechiz_blog...')
+#1 /var/www/html/magento2/app/code/OpenTechiz/Blog/Observer/Approval.php(64): Magento\Framework\App\Cache\Manager->clean(Array)
+#2 /var/www/html/magento2/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): OpenTechiz\Blog\Observer\Approval->execute(Object(Magento\Framework\Event\Observer))
+#3 /var/www/html/magento2/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(OpenTechiz\Blog\Observer\Approval), Object(Magento\Framework\Event\Observer))
+#4 /var/www/html/magento2/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#5  in /var/www/html/magento2/vendor/magento/framework/App/Cache/TypeList.php on line 194
+[11-Jul-2018 05:55:22 UTC] PHP Fatal error:  Uncaught Error: Call to private method Magento\Framework\App\Cache\FlushCacheByTags::cleanCacheByTags() from context 'OpenTechiz\Blog\Observer\Approval' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Observer/Approval.php:64
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): OpenTechiz\Blog\Observer\Approval->execute(Object(Magento\Framework\Event\Observer))
+#1 /var/www/html/magento2/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(OpenTechiz\Blog\Observer\Approval), Object(Magento\Framework\Event\Observer))
+#2 /var/www/html/magento2/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#3 /var/www/html/magento2/generated/code/Magento/Framework/Event/Manager/Proxy.php(95): Magento\Framework\Event\Manager->dispatch('blog_comment_pr...', Array)
+#4 /var/www/html/magento2/a in /var/www/html/magento2/app/code/OpenTechiz/Blog/Observer/Approval.php on line 64
+[11-Jul-2018 08:15:54 UTC] PHP Fatal error:  Can't use method return value in write context in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php on line 51
+[11-Jul-2018 08:16:46 UTC] PHP Fatal error:  Can't use method return value in write context in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php on line 51
+[11-Jul-2018 09:51:24 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 53
+[11-Jul-2018 10:06:25 UTC] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION), expecting ',' or ';' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 11
+[11-Jul-2018 10:27:41 UTC] PHP Fatal error:  Constant expression contains invalid operations in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 12
+[11-Jul-2018 10:30:02 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\Model\AbstractModel::__construct() must be an instance of Magento\Framework\Model\ResourceModel\AbstractResource or null, instance of Magento\Framework\Api\ExtensionAttributesFactory given, called in /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php on line 34 and defined in /var/www/html/magento2/vendor/magento/framework/Model/AbstractModel.php:171
+Stack trace:
+#0 /var/www/html/magento2/app/code/OpenTechiz/Blog/Model/Post.php(34): Magento\Framework\Model\AbstractModel->__construct(Object(Magento\Framework\Model\Context), Object(Magento\Framework\Registry), Object(Magento\Framework\Api\ExtensionAttributesFactory), Object(Magento\Framework\Api\AttributeValueFactory), Object(Magento\Store\Model\StoreManager), Object(Magento\Catalog\Model\ResourceModel\Product\Interceptor), Object(Magento\Catalog\Model\ResourceModel\Product\Collection\Interceptor), Array)
+#1 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/AbstractFactor in /var/www/html/magento2/vendor/magento/framework/Model/AbstractModel.php on line 171
+[11-Jul-2018 12:03:30 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 52
+[11-Jul-2018 12:06:29 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 52
+[11-Jul-2018 12:07:38 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 58
+[11-Jul-2018 12:22:23 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 50

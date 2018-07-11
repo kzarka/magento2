@@ -9,6 +9,7 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements CommentI
     const STATUS_DISABLED =2;
     const STATUS_PENDING = 0;
 	const CACHE_TAG='opentechiz_blog_comment';
+    const CACHE_COMMENT_POST_TAG = "opentechiz_blog_comment_post";
 
 	function _construct()
 	{
@@ -22,7 +23,7 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements CommentI
 
     public function getIdentities()
     {
-        return [self::CACHE_TAG . '_' . $this->getId()];
+        return [self::CACHE_TAG . '_' . $this->getID()];
     }
     /**
      * @{initialize}
