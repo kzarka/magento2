@@ -49,7 +49,10 @@ class Save extends \Magento\Backend\App\Action
             if ($id) {
                 $model->load($id);
             }
-            $model->setData($data);
+            $model->setTitle($data['title']);
+            $model->setContent($data['content']);
+            $model->setUrlKey($data['url_key']);
+            $model->setIsActive($data['is_active']);
             $this->_eventManager->dispatch(
                 'blog_post_prepare_save',
                 ['post' => $model, 'request' => $this->getRequest()]
