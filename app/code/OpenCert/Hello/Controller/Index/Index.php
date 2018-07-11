@@ -3,15 +3,16 @@
 namespace OpenCert\Hello\Controller\Index;
  
 use Magento\Framework\App\Action\Context;
- 
+
 class Index extends \Magento\Framework\App\Action\Action
 {
     protected $_resultPageFactory;
     protected $_registry;
  
     public function __construct(Context $context, 
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory, 
-        \Magento\Framework\Registry $registry)
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
+        \Magento\Framework\Registry $registry
+    )
     {
         $this->_resultPageFactory = $resultPageFactory;
         $this->_registry = $registry;

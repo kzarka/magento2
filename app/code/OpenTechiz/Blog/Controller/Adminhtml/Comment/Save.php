@@ -42,12 +42,11 @@ class Save extends \Magento\Backend\App\Action
             if ($id) {
                 $model->load($id);
             }
-            else $model->setData($data);
+            $model->setData($data);
             $this->_eventManager->dispatch(
                 'blog_comment_prepare_save',
                 ['comment' => $model, 'request' => $this->getRequest()]
             );
-            $model->setData($data);
 
             try {
                 $model->save();

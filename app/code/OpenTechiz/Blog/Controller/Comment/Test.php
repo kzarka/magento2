@@ -49,8 +49,9 @@ class Test extends Action
     {
         $post = $this->commentFactory->create();
         $post->load(52);
-        echo $post->getUserID();
-        print_r($post->getData());
+        echo $post->getTitle();
+        $post = $post->getOrigData();
+        print_r($post);
         $this->_logger->info('Start Observer'); 
         die();
     }

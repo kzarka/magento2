@@ -24,26 +24,25 @@ class Notification extends \Magento\Framework\Model\AbstractModel implements Not
         return $this->getData(self::NOTI_ID);
     }
 
-    /**
-     * @{initialize}
-     */
     function getContent(){
         return $this->getData(self::CONTENT);
     }
-    /**
-     * @{initialize}
-     */
+
     function getPostID(){
         return $this->getData(self::POST_ID);
     }
-    /**
-     * @{initialize}
-     */
 
     function getUserID(){
         return $this->getData(self::USER_ID);
     }
 
+    function getCommentID(){
+        return $this->getData(self::COMMENT_ID);
+    }
+
+    function isViewed(){
+        return $this->getData(self::IS_VIEWED);
+    }
 
     function getCreationTime(){
         return $this->getData(self::CREATION_TIME);
@@ -73,9 +72,16 @@ class Notification extends \Magento\Framework\Model\AbstractModel implements Not
         return $this;
     }
 
-    /**
-     * @{initialize}
-     */
+    function setCommentID($commentID){
+        $this->setData(self::COMMENT_ID, $commentID);
+        return $this;
+    }
+
+    function setIsViewed($isViewed){
+        $this->setData(self::IS_VIEWED,$isViewed);
+        return $this;
+    }
+
     function setCreationTime($creatTime){
         $this->setData(self::CREATION_TIME,$creatTime);
         return $this;

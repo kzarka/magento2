@@ -13,6 +13,8 @@ interface NotificationInterface
     const CONTENT                  = 'content';
     const POST_ID                  = 'post_id';
     const USER_ID					= 'user_id';
+    const COMMENT_ID			= 'comment_id';
+    const IS_VIEWED				= 'is_viewed';
     const CREATION_TIME            = 'creation_time';
 
 	function getID();
@@ -23,6 +25,10 @@ interface NotificationInterface
 
 	function getUserID();
 
+	function getCommentID();
+
+	function isViewed();
+
 	function getCreationTime();
 
 	function setID($id);
@@ -30,6 +36,10 @@ interface NotificationInterface
 	function setContent($content);
 
 	function setPostID($postID);
+
+	function setCommentID($commentID);
+
+	function setIsViewed($isViewed);
 
 	function setUserID($userID);
 
