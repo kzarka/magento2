@@ -33,7 +33,11 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
      */
     public function getIdentities()
     {
-        return [self::CACHE_TAG . '_' . $this->getID()];
+        $identities = [self::CACHE_TAG . '_' . $this->getID()];
+        if ($this->isObjectNew()) {
+            $identities[] = self::CACHE_TAG;
+        }
+        return $identities;
     }
     /**
      * @{initialize}

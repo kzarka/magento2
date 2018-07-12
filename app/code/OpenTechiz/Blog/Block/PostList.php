@@ -36,7 +36,14 @@ class PostList extends \Magento\Framework\View\Element\Template implements
 	public function getIdentities()
 	{
 		$identities = [];
-		foreach ($this->getPosts() as $post) {
+		$posts = $this->_postCollectionFactory
+			->create()
+			->addFieldToFilter('is_active', 1)
+			->addOrder(
+				PostInterface::CREATION_TIME,
+				PostCollection::SORT_ORDER_DESC
+			);
+		foreach ($posts as $post) {
 			$identities = array_merge($identities, $post->getIdentities());
 		}
 		return $identities;

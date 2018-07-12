@@ -748,3 +748,28 @@ Stack trace:
 [11-Jul-2018 12:06:29 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 52
 [11-Jul-2018 12:07:38 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 58
 [11-Jul-2018 12:22:23 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/PostView.php on line 50
+[11-Jul-2018 13:20:26 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 60
+[11-Jul-2018 14:05:54 UTC] PHP Fatal error:  Uncaught Error: Class 'OpenTechiz\Blog\Model\Product' not found in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php:59
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/module-page-cache/Model/Layout/LayoutPlugin.php(71): OpenTechiz\Blog\Block\CommentList->getIdentities()
+#1 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(146): Magento\PageCache\Model\Layout\LayoutPlugin->afterGetOutput(Object(Magento\Framework\View\Layout\Interceptor), '\n<script>\n    t...')
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\View\Layout\Interceptor->Magento\Framework\Interception\{closure}()
+#3 /var/www/html/magento2/generated/code/Magento/Framework/View/Layout/Interceptor.php(494): Magento\Framework\View\Layout\Interceptor->___callPlugins('getOutput', Array, Array)
+#4 /var/www/html/magento2/vendor/magento/framework/View/Result/Page.php(257): Magento\Framework\View\Layout\Interceptor->getOutput()
+#5 /var/www/html/magen in /var/www/html/magento2/app/code/OpenTechiz/Blog/Block/CommentList.php on line 59
+[11-Jul-2018 14:06:42 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Catalog/Model/ResourceModel/Product/. in [Magento\Catalog\Model\ResourceModel\Product\CollectionFactory] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Catalog...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Catalog...')
+#2 [internal function]: spl_autoload_call('Magento\\Catalog...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Catalog...')
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Catalog...')
+#5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Conf in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[11-Jul-2018 14:06:42 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /var/www/html/magento2/generated/code/Magento/Catalog/Model/ResourceModel/Product/. in [Magento\Catalog\Model\ResourceModel\Product\CollectionFactory] in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Catalog...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Catalog...')
+#2 [internal function]: spl_autoload_call('Magento\\Catalog...')
+#3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Catalog...')
+#4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Catalog...')
+#5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Conf in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115

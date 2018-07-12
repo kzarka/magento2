@@ -49,9 +49,9 @@ class PostView extends \Magento\Framework\View\Element\Template implements
             ->addFieldToFilter('comment_id', $this->getID())
             ->addFieldToFilter('is_active', '1');
         foreach ($comments as $comment) {
-            $identities[] = array_merge($identities, 
+            $identities = array_merge($identities, 
             [\OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG."_".$comment->getID()]);
         }
-        return $identities;
+        return ($identities);
     }
 }
