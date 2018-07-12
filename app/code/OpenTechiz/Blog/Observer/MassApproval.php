@@ -3,7 +3,8 @@
 namespace OpenTechiz\Blog\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
-
+use Magento\Framework\Indexer\CacheContext;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 class MassApproval implements ObserverInterface
 {
     protected $_postFactory;
@@ -15,17 +16,21 @@ class MassApproval implements ObserverInterface
     public function __construct(
         \OpenTechiz\Blog\Model\ResourceModel\Notification\CollectionFactory $notiCollectionFactory,
         \OpenTechiz\Blog\Model\PostFactory $postFactory,
-        \OpenTechiz\Blog\Model\NotificationFactory $notiFactory
+        \OpenTechiz\Blog\Model\NotificationFactory $notiFactory,
+        CacheContext $cacheContext,
+        EventManager $eventManager
     )
     {
         $this->_notiCollectionFactory = $notiCollectionFactory;
         $this->_postFactory = $postFactory;
         $this->_notiFactory = $notiFactory;
+        $this->_cacheContext = $cacheContext;
+        $this->_eventManager = $eventManager;
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer) {
         $comments = $observer->getData('comments');
-
+        $postIds =  [];
         foreach ($comments as $comment) {
             $user_id = $comment->getUserID();
             $post_id = $comment->getPostID();
@@ -37,6 +42,9 @@ class MassApproval implements ObserverInterface
             $notiCheck = $this->_notiCollectionFactory->create()
                 ->addFieldToFilter('comment_id', $comment_id);
             if($notiCheck->count()>0) return;
+
+            // add post ID to array
+            $postIds[] = [$post_id];
             
             // if user_id null then return
             if(!$user_id) return;
@@ -52,6 +60,9 @@ class MassApproval implements ObserverInterface
             $noti->setPostID($post_id);
             $noti->save();
         }
-        
+        if (count($postIds)==0) return;
+        // clean cache
+        $this->_cacheContext->registerEntities(\OpenTechiz\Blog\Model\Post::CACHE_TAG, array_unique($postIds));
+        $this->_eventManager->dispatch('clean_cache_by_tags', ['object' => $this->_cacheContext]);
     }
 }

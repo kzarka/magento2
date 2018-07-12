@@ -7,4 +7,7 @@
 	<event name="blog_comment_mass_active_prepare_save">
 		<observer name="MassNotification" instance="OpenTechiz\Blog\Observer\MassApproval" />
 	</event>
+	<event name="blog_post_prepare_save">
+		<observer name="NewPost" instance="OpenTechiz\Blog\Observer\NewPost" />
+	</event>
 </config>

@@ -53,10 +53,9 @@ class CommentList extends \Magento\Framework\View\Element\Template implements
         $identities = [];
 		foreach ($this->getComments() as $comment) {
 			//$identities = array_merge($identities, $comment->getIdentities());
-			$identities = array_merge($identities, 
-            [\OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG."_".$comment->getID()]);
+			$identities = array_merge($identities, $comment->getIdentities());
 		}
-		$identities[] = \OpenTechiz\Blog\Model\Post::CACHE_TAG.'_'.$this->getPostID();
+		$identities[] = \OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG.'_'.$this->getPostID();
 		return $identities;
     }
 

@@ -3,6 +3,8 @@
 namespace OpenTechiz\Blog\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Indexer\CacheContext;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 
 class Approval implements ObserverInterface
 {
@@ -11,16 +13,24 @@ class Approval implements ObserverInterface
     protected $_notiFactory;
 
     protected $_notiCollectionFactory;
+
+    protected $_cacheContext;
+
+    protected $_eventManager;
  
     public function __construct(
         \OpenTechiz\Blog\Model\ResourceModel\Notification\CollectionFactory $notiCollectionFactory,
         \OpenTechiz\Blog\Model\PostFactory $postFactory,
-        \OpenTechiz\Blog\Model\NotificationFactory $notiFactory
+        \OpenTechiz\Blog\Model\NotificationFactory $notiFactory,
+        CacheContext $cacheContext,
+        EventManager $eventManager
     )
     {
         $this->_notiCollectionFactory = $notiCollectionFactory;
         $this->_postFactory = $postFactory;
         $this->_notiFactory = $notiFactory;
+        $this->_cacheContext = $cacheContext;
+        $this->_eventManager = $eventManager;
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer) {
@@ -56,5 +66,9 @@ class Approval implements ObserverInterface
         $noti->setCommentID($comment_id);
         $noti->setPostID($post_id);
         $noti->save();
+
+        // clean cache
+        $this->_cacheContext->registerEntities(\OpenTechiz\Blog\Model\Post::CACHE_TAG, [$post_id]);
+        $this->_eventManager->dispatch('clean_cache_by_tags', ['object' => $this->_cacheContext]);
     }
 }
