@@ -1,10 +1,9 @@
-<?php print_r($block->getIdentities()); //die();?>
 
-<H4><?php echo __('Lastest Comment For Post ID ') . $block->getPostID() ?></H4>
+<H4><?php echo __('Lastest Comment For Post ID ') . $block->getPostId() ?></H4>
 
 <ul class="blog-post-list" id="data">
 </ul>
-
+<hr>
 <script id="blog-comment" type="text/x-magento-template">
     <li class="blog-post-list-item"><%- cmt.author %>
 		<div class="blog-post-item-content"><%- cmt.content %></div>
@@ -18,16 +17,20 @@
 $comments = $block->getComments(); ?>
 <?php if($comments->count()>0){ ?>
 <ul class="blog-post-list">
-<?php foreach ($comments as $cmt) { ?>
+<?php foreach ($comments as $cmt) : ?>
 	<li class="blog-post-list-item"><?php echo $cmt->getAuthor() ?>
 		<div class="blog-post-item-content"><?php echo $cmt->getContent() ?></div>
 		<div class="blog-post-item-meta">
 			<small>Created at: <?php echo $cmt->getCreationTime() ?></small>
 		</div>
 	</li>
-<?php } ?>
+<?php endforeach; ?>
 </ul>
 <?php } else echo "No comment found!"; ?>
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+
 
 
 

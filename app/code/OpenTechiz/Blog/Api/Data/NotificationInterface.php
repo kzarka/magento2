@@ -17,31 +17,29 @@ interface NotificationInterface
     const IS_VIEWED				= 'is_viewed';
     const CREATION_TIME            = 'creation_time';
 
-	function getID();
+	function getId();
 
 	function getContent();
 
-	function getPostID();
+	function getPostId();
 
-	function getUserID();
+	function getUserId();
 
-	function getCommentID();
+	function getCommentId();
 
-	function isViewed();
+	function isViewed($isViewed = null);
 
 	function getCreationTime();
 
-	function setID($id);
+	function setId($id);
 
 	function setContent($content);
 
-	function setPostID($postID);
+	function setPostId($postID);
 
-	function setCommentID($commentID);
+	function setCommentId($commentID);
 
-	function setIsViewed($isViewed);
-
-	function setUserID($userID);
+	function setUserId($userID);
 
 	function setCreationTime($creatTime);
 }

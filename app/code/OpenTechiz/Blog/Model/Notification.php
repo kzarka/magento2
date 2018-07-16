@@ -20,7 +20,7 @@ class Notification extends \Magento\Framework\Model\AbstractModel implements Not
     /**
      * @{initialize}
      */
-    function getID(){
+    function getId(){
         return $this->getData(self::NOTI_ID);
     }
 
@@ -28,34 +28,37 @@ class Notification extends \Magento\Framework\Model\AbstractModel implements Not
         return $this->getData(self::CONTENT);
     }
 
-    function getPostID(){
+    function getPostId(){
         return $this->getData(self::POST_ID);
     }
 
-    function getUserID(){
+    function getUserId(){
         return $this->getData(self::USER_ID);
     }
 
-    function getCommentID(){
+    function getCommentId(){
         return $this->getData(self::COMMENT_ID);
     }
 
-    function isViewed(){
-        return $this->getData(self::IS_VIEWED);
+    function isViewed($isViewed = null){
+        $result = $this->getData(self::IS_VIEWED);
+        if($isViewed != null)
+        {
+            $this->setData(self::IS_VIEWED, $isViewed);
+        }
+        return $result;
     }
 
     function getCreationTime(){
         return $this->getData(self::CREATION_TIME);
     }
     
-    function setID($id){
+    function setId($id){
         $this->setData(self::NOTI_ID,$id);
         return $this;
     }
-    /**
-     * @{initialize}
-     */
-    function setUserID($userID){
+    
+    function setUserId($userID){
         $this->setData(self::USER_ID,$userID);
         return $this;
     }
@@ -64,21 +67,14 @@ class Notification extends \Magento\Framework\Model\AbstractModel implements Not
         $this->setData(self::CONTENT,$content);
         return $this;
     }
-    /**
-     * @{initialize}
-     */
-    function setPostID($postId){
+    
+    function setPostId($postId){
         $this->setData(self::POST_ID,$postId);
         return $this;
     }
 
-    function setCommentID($commentID){
+    function setCommentId($commentID){
         $this->setData(self::COMMENT_ID, $commentID);
-        return $this;
-    }
-
-    function setIsViewed($isViewed){
-        $this->setData(self::IS_VIEWED,$isViewed);
         return $this;
     }
 

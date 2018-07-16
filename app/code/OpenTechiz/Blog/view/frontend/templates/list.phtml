@@ -1,4 +1,3 @@
-<?php print_r($block->getIdentities()); ?>
 <H1><?php echo __('Lastest Blog Posts') ?></H1>
 <ul class="blog-post-list">
 	<?php foreach ($block->getPosts() as $post): ?>
@@ -17,4 +16,7 @@
 
 		</li>
 	<?php endforeach; ?>
+	<?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
 </ul>

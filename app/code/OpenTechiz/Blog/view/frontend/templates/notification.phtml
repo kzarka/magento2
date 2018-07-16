@@ -13,13 +13,22 @@
 <?php $helper = $this->helper('OpenTechiz\Blog\Helper\UserInfo'); ?>
 <?php if($helper->isLoggedIn()) { ?>
 <script id="blog-notification" type="text/x-magento-template">
-    <li class="dropdown-item"><%- noti.content %></li>
+    <li class="dropdown-item">
+    <% if (noti.is_viewed=="0") { %>
+        <b><%- noti.content %></b>
+    <% } else { %>
+        <%- noti.content %>
+    <% } %>
+        <br><small>At <%- noti.creation_time %></small>
+
+    </li>
 </script>
-<div class="customer-menu">
+<div class="customer-menu" id="expand">
     <span class="counter qty action toggle"  data-mage-init='{"dropdown":{}}' data-toggle="dropdown" aria-haspopup="true">
-        <span class="title" id="noti-count"><?= __("Customer Menu"); ?></span>
+        <span class="title" id="noti-count" title="New notifcations"></span>
     </span>
-    <ul class="dropdown" id="notification-content">
+    <ul class="dropdown" id="notification-content" style="overflow-y: scroll; height:400px; padding: 5px;">
+    <span style="text-align: center;"><h3>Notification</h3></span>
     </ul>
 </div>
 <?php } ?>

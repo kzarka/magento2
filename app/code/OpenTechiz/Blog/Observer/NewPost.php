@@ -26,10 +26,6 @@ class NewPost implements ObserverInterface
         $original = $post->getOrigData();
         // if not new post then return
         if(!$post->isObjectNew()) return;
-        $status = $post->isActive();
-
-        if($status != 1) return;
-
         // clean cache
         $this->_cacheContext->registerEntities(\OpenTechiz\Blog\Model\Post::CACHE_TAG, ['list']);
         $this->_eventManager->dispatch('clean_cache_by_tags', ['object' => $this->_cacheContext]);

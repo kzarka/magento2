@@ -44,7 +44,7 @@ class MassApproval implements ObserverInterface
             if($notiCheck->count()>0) return;
 
             // add post ID to array
-            $postIds[] = [$post_id];
+            $postIds[] = $post_id;
             
             // if user_id null then return
             if(!$user_id) return;

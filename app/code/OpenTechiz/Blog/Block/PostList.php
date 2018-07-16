@@ -18,8 +18,40 @@ class PostList extends \Magento\Framework\View\Element\Template implements
 		parent::__construct($context, $data);
 	}
 
+	protected function _prepareLayout()
+	{
+	    parent::_prepareLayout();
+	    $this->pageConfig->getTitle()->set(__('Blog Post'));
+
+
+	    if ($this->getPosts()) {
+	        $pager = $this->getLayout()->createBlock(
+	            'Magento\Theme\Block\Html\Pager',
+	            'blog.post.pager'
+	        )
+	        ->setAvailableLimit(array(5=>5,10=>10,15=>15))
+	        ->setShowPerPage(true)
+	        ->setShowAmounts(false)
+	        ->setCollection(
+	            $this->getPosts()
+	        );
+	        $this->setChild('pager', $pager);
+	        $this->getPosts()->load();
+	    }
+	    return $this;
+	}
+
+	public function getPagerHtml()
+	{
+	    return $this->getChildHtml('pager');
+	}
+
 	public function getPosts()
 	{
+		//get values of current page
+        $page=($this->getRequest()->getParam('p'))? $this->getRequest()->getParam('p') : 1;
+    	//get values of current limit
+        $pageSize=($this->getRequest()->getParam('limit'))? $this->getRequest()->getParam('limit') : 1;
 		if(!$this->hasData("posts")) {
 			$posts = $this->_postCollectionFactory
 				->create()
@@ -27,7 +59,9 @@ class PostList extends \Magento\Framework\View\Element\Template implements
 				->addOrder(
 					PostInterface::CREATION_TIME,
 					PostCollection::SORT_ORDER_DESC
-				);
+				)
+				->setPageSize($pageSize)
+        		->setCurPage($page);
 			$this->setData("posts",$posts);
 		}
 		return $this->getData("posts");

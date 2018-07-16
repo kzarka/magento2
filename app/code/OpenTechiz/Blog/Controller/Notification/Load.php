@@ -2,7 +2,7 @@
 namespace OpenTechiz\Blog\Controller\Notification;
 use \Magento\Framework\App\Action\Action;
 use OpenTechiz\Blog\Api\Data\NotificationInterface;
-use OpenTechiz\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
+use OpenTechiz\Blog\Model\ResourceModel\Notification\Collection as NotificationCollection;
 
 class Load extends Action
 {
@@ -35,35 +35,53 @@ class Load extends Action
         if(!$this->_customerSession->isLoggedIn()) return false;
         $postData = (array) $this->getRequest()->getPostValue();
         $page = 1;
+        $expand = 0;
         if(isset($postData['page']))
         {
             $page = $postData['page'];
         }
-        
+
+        if(isset($postData['expand']))
+        {
+            $expand = $postData['expand'];
+        }
+
         $user_id = $this->_customerSession->getCustomer()->getId();
 
         $jsonResultResponse = $this->_resultJsonFactory->create();
         
-        $comments = $this->_notificationCollectionFactory
+        $totalUnreadNotifications = $this->_notificationCollectionFactory
             ->create()
             ->addFieldToFilter('is_viewed', 0)
             ->addFieldToFilter('user_id', $user_id)
             ->toArray();
 
-        $commentsTotal = $this->_notificationCollectionFactory
+        $notifications = $this->_notificationCollectionFactory
             ->create()
             ->addFieldToFilter('user_id', $user_id)
             ->setPageSize(5)
             ->setCurPage($page)
             ->addOrder(
                 NotificationInterface::CREATION_TIME,
-                CommentCollection::SORT_ORDER_DESC
-            )->toArray();
-        
-        if($commentsTotal['totalRecords']==0) return false;
-        if(ceil($commentsTotal['totalRecords']/5)<$page) return $jsonResultResponse->setData('end');;
-        $comments['items'] = $commentsTotal['items'];
-        $jsonResultResponse->setData($comments);
+                NotificationCollection::SORT_ORDER_DESC
+            );
+        $totalRecords = $notifications->toArray()['totalRecords'];
+        $unreadNotification = count($totalUnreadNotifications['items']);
+        if($totalRecords==0) return false;
+        if(ceil($totalRecords/5)<$page) return $jsonResultResponse->setData('end');;
+        $returnData = $notifications->toArray();
+        $returnData['unreadRecords'] = $unreadNotification;
+        $returnData['expand'] = $expand;
+        $jsonResultResponse->setData($returnData);
+        foreach ($notifications as $notification) {
+            if(!$expand && $page == 1) break;
+            if(!$notification->isViewed())
+            {
+                $notification->isViewed(1);
+                $notification->save();
+            }
+        }
+
         return $jsonResultResponse;
     }
 }

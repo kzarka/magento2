@@ -7,23 +7,24 @@ define([
 	"use strict";
 	
 	return {
-        loadNotifications : function(config, page=1){
+        loadNotifications : function(config, page=1, expand = 0){
 			var AjaxNotificationLoadUrl = config.AjaxNotificationLoadUrl;
 			$.ajax({
 				url: AjaxNotificationLoadUrl,
 				type: 'POST',
 				data: {
-					page: page
+					page: page,
+					expand: expand
 				}
 			}).done(function(data){
 				console.log(data);
-				if(data==false) return false;
-				if(data=="end") 
+				if(!data) return false;
+				if(data=="end")
 				{
 					$('li.dropdown-item').last().remove();
 					return;
 				}
-				$('#noti-count').html(data.totalRecords);
+				$('#noti-count').html(data.unreadRecords);
 				$('li.dropdown-item').last().remove();
 				var template = mageTemplate('#blog-notification');
 				//$('ul#notification-content').empty();

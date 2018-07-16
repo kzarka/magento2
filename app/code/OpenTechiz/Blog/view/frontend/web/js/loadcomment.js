@@ -14,12 +14,12 @@ define([
 				url: AjaxCommentLoadUrl,
 				type: 'POST',
 				data: {
-					post_id: AjaxPostId
+					post_id: AjaxPostId,
 				}
 			}).done(function(data){
 				var template = mageTemplate('#blog-comment');
 				$('ul#data').empty();
-				if(data==false) return false;
+				if(!data) return false;
 				var comments = data.items;
 				comments.forEach(function(cmt){
 					var newField = template({

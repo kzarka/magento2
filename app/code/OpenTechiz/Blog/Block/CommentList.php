@@ -26,14 +26,41 @@ class CommentList extends \Magento\Framework\View\Element\Template implements
 		parent::__construct($context, $data);
 	}
 
-	public function getPostID()
+	protected function _prepareLayout()
+	{
+	    parent::_prepareLayout();
+
+	    if ($this->getComments()) {
+	        $pager = $this->getLayout()->createBlock(
+	            'Magento\Theme\Block\Html\Pager',
+	            'blog.comment.pager'
+	        )
+	        ->setAvailableLimit(array(5=>5,10=>10,15=>15))
+	        ->setShowPerPage(true)
+	        ->setShowAmounts(false)
+	        ->setCollection(
+	            $this->getComments()
+	        );
+	        $this->setChild('pager', $pager);
+	        $this->getComments()->load();
+	    }
+	    return $this;
+	}
+
+	public function getPagerHtml()
+	{
+	    return $this->getChildHtml('pager');
+	}
+
+	public function getPostId()
 	{
 		return $this->_request->getParam('post_id', false);
 	}
 
 	public function getComments()
 	{
-		$post_id = $this->getPostID();
+		$post_id = $this->getPostId();
+		$page = $this->_request->getParam('page', false);
 		if(!$this->hasData("cmt")) {
 			$comments = $this->_commentCollectionFactory
 				->create()
@@ -42,7 +69,8 @@ class CommentList extends \Magento\Framework\View\Element\Template implements
 				->addOrder(
 					CommentInterface::CREATION_TIME,
 					CommentCollection::SORT_ORDER_DESC
-				);
+				)
+        		->setCurPage($page);
 			$this->setData("cmt",$comments);
 		}
 		return $this->getData("cmt");
@@ -55,7 +83,7 @@ class CommentList extends \Magento\Framework\View\Element\Template implements
 			//$identities = array_merge($identities, $comment->getIdentities());
 			$identities = array_merge($identities, $comment->getIdentities());
 		}
-		$identities[] = \OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG.'_'.$this->getPostID();
+		$identities[] = \OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG.'_'.$this->getPostId();
 		return $identities;
     }
 

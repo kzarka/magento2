@@ -13,10 +13,10 @@ define([
 		var AjaxCommentPostUrl = config.AjaxCommentPostUrl;
 
 		var page = 1;
-		notification.loadNotifications(config, page);
+		var expand = 0;
 		var dataForm = $('#comment-form');
 		dataForm.mage('validation', {});
-
+		notification.loadNotifications(config, page, expand);
 		$(document).on('click', '.submit',function(){
 			if(dataForm.valid()){
 				event.preventDefault();
@@ -40,10 +40,19 @@ define([
 			}
 		});
 
+		$( document ).ready(function() {
+		    $(".customer-menu").mousedown(function() {
+		    	if(expand==1) return;
+			  	expand = 1;
+			  	$('li.dropdown-item').remove();
+			  	notification.loadNotifications(config, page, expand);
+			});
+		});
+
 		$(document).on('click', '#load-more',function(){
 			event.preventDefault();
 			page++;
-			notification.loadNotifications(config, page);
+			notification.loadNotifications(config, page, 1);
 		});
 	};
 	return main;

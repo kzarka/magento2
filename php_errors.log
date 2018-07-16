@@ -773,3 +773,20 @@ Stack trace:
 #3 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Catalog...')
 #4 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Catalog...')
 #5 /var/www/html/magento2/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\Interception\Conf in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php on line 115
+[15-Jul-2018 06:19:15 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /var/www/html/magento2/app/code/OpenTechiz/Blog/view/frontend/templates/approvedcomment.phtml on line 28
+[15-Jul-2018 07:44:32 UTC] PHP Parse error:  syntax error, unexpected '$store' (T_VARIABLE), expecting ',' or ')' in /var/www/html/magento2/app/code/CustomBlock/AboutInfo/Block/About.php on line 19
+[15-Jul-2018 10:09:51 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type OpenTechiz\Blog\Model\ResourceModel\Notification\Collection as array in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php:63
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Notification/Load/Interceptor.php(24): OpenTechiz\Blog\Controller\Notification\Load->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Notification\Load\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Notification\Load\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(6 in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php on line 63
+[15-Jul-2018 10:31:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function count() on array in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php:63
+Stack trace:
+#0 /var/www/html/magento2/generated/code/OpenTechiz/Blog/Controller/Notification/Load/Interceptor.php(24): OpenTechiz\Blog\Controller\Notification\Load->execute()
+#1 /var/www/html/magento2/vendor/magento/framework/App/Action/Action.php(107): OpenTechiz\Blog\Controller\Notification\Load\Interceptor->execute()
+#2 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /var/www/html/magento2/vendor/magento/framework/Interception/Interceptor.php(138): OpenTechiz\Blog\Controller\Notification\Load\Interceptor->___callParent('dispatch', Array)
+#4 /var/www/html/magento2/vendor/mgtcommerce/module-mgtdevelopertoolbar/src/app/code/Mgt/DeveloperToolbar/Model/App/FrontController/ToolbarPlugin.php(64): OpenTechiz\Blog\Controller\Notification\Load\Int in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php on line 63
+[15-Jul-2018 10:33:40 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting function (T_FUNCTION) or const (T_CONST) in /var/www/html/magento2/app/code/OpenTechiz/Blog/Controller/Notification/Load.php on line 76
