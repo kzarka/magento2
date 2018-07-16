@@ -41,6 +41,7 @@
         <referenceContainer name="header-wrapper" htmlId="contact">
             <block class="CustomBlock\AboutInfo\Block\About" name="about-info" template="CustomBlock_AboutInfo::about.phtml" after="detail_pr">
             </block>
+            
         </referenceContainer>
 
         <!--remove link footer-->

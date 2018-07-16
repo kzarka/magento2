@@ -2,8 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="header-wrapper">
-            <block class="OpenTechiz\Blog\Block\SaveComment" name="opentechiz.blog.notificate_comment"
-                   template="OpenTechiz_Blog::notifications.phtml">
+            <block class="OpenTechiz\Blog\Block\SaveComment" name="opentechiz.blog.notifications"
+                   template="OpenTechiz_Blog::notifications.phtml" before="top.search">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
