@@ -71,7 +71,7 @@ class Load extends Action
         if(ceil($totalRecords/5)<$page) return $jsonResultResponse->setData('end');;
         $returnData = $notifications->toArray();
         $returnData['unreadRecords'] = $unreadNotification;
-        $returnData['expand'] = $expand;
+        
         $jsonResultResponse->setData($returnData);
         foreach ($notifications as $notification) {
             if(!$expand && $page == 1) break;
@@ -79,6 +79,7 @@ class Load extends Action
             {
                 $notification->isViewed(1);
                 $notification->save();
+                $returnData['expand'] = $expand;
             }
         }
 

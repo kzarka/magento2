@@ -1,0 +1,23 @@
+
+<div class="customer-menu" id="expand" data-role="notifications" data-bind="scope: 'loadNotifications'">
+    <span class="counter qty action toggle"  data-mage-init='{"dropdown":{}}' data-toggle="dropdown" aria-haspopup="true">
+        <span class="title" id="noti-count" title="New notifcations" data-bind="text: loadNotifications().count, attr: { title:  loadNotifications().countCaption }"></span>
+    </span>
+    <ul class="dropdown" id="notification-content" style="overflow-y: scroll; height:400px; padding: 5px;" data-bind="foreach: loadNotifications().items">
+    	<li class="dropdown-item">
+	    	<!-- ko if: is_viewed == '0' -->
+	    	<b data-bind="text: content"></b>
+	    	<!-- /ko -->
+    		<!-- ko if: is_viewed == '1' -->
+	    	<span data-bind="text: content"></span>
+	    	<!-- /ko -->
+	    	<br><small data-bind="text: creation_time"></small>
+    	</li>
+    </ul>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=notifications]": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}
+    }
+</script>

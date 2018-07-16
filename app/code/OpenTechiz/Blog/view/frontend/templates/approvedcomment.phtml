@@ -30,6 +30,18 @@ $comments = $block->getComments(); ?>
 <?php if ($block->getPagerHtml()): ?>
     <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
 <?php endif ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "OpenTechiz_Blog/js/commentajax": {
+                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>",
+                "AjaxCommentLoadUrl": "<?php echo $block->getAjaxUrl() ?>",
+                "AjaxPostId": "<?php echo $block->getPostID(); ?>",
+                "AjaxNotificationLoadUrl": "<?php echo $block->getAjaxNotificationLoadUrl(); ?>"
+            }
+        }
+    }
+</script>
 
 
 

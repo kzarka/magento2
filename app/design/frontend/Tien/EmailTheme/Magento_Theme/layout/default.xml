@@ -39,8 +39,6 @@
         </referenceBlock>
         <!--soo dien thoai header-->
         <referenceContainer name="header-wrapper" htmlId="contact">
-            <block class="OpenTechiz\Blog\Block\SaveComment" name="detail_pr" template="OpenTechiz_Blog::notification.phtml" after="top.search">
-            </block>
             <block class="CustomBlock\AboutInfo\Block\About" name="about-info" template="CustomBlock_AboutInfo::about.phtml" after="detail_pr">
             </block>
         </referenceContainer>

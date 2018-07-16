@@ -62,7 +62,7 @@ class MassApproval implements ObserverInterface
         }
         if (count($postIds)==0) return;
         // clean cache
-        $this->_cacheContext->registerEntities(\OpenTechiz\Blog\Model\Post::CACHE_TAG, array_unique($postIds));
+        $this->_cacheContext->registerEntities(\OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG, array_unique($postIds));
         $this->_eventManager->dispatch('clean_cache_by_tags', ['object' => $this->_cacheContext]);
     }
 }

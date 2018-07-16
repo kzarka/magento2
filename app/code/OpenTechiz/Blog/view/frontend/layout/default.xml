@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header-wrapper">
+            <block class="OpenTechiz\Blog\Block\SaveComment" name="opentechiz.blog.notificate_comment"
+                   template="OpenTechiz_Blog::notifications.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="loadNotifications" xsi:type="array">
+                                <item name="component" xsi:type="string">OpenTechiz_Blog/js/view/loadnotifications</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
