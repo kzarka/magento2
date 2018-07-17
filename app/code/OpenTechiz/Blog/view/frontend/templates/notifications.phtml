@@ -4,6 +4,8 @@
         "[data-role=notifications]": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}
     }
 </script>
+<?php $helper = $this->helper('OpenTechiz\Blog\Helper\UserInfo'); ?>
+<?php if($helper->isLoggedIn()) : ?>
 <div class="authentication-wrapper" data-block="authentication" data-role="notifications" data-bind="scope: 'loadNotifications'" style="margin-top: 0px !important; width: : auto !important;">
     <button
         type="button"
@@ -40,3 +42,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

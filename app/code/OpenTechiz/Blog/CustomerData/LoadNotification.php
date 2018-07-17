@@ -21,6 +21,7 @@ class LoadNotification extends \Magento\Framework\DataObject implements SectionS
      */
     public function getSectionData()
     {
+        if(!$this->_customerSession->isLoggedIn()) return [];
         $count = $this->getUnreadNotifications()->count();
         $notification = $this->getNotifications();
 
