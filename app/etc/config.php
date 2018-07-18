@@ -162,6 +162,7 @@ return [
     'Task4_ProductFactoryTest' => 1,
     'Task4_RepositoryInterfaceTest' => 1,
     'Task5_AttributePractice' => 1,
+    'Task5_CheckoutPractice' => 1,
     'Task5_CustomizeProduct' => 1,
     'Temando_Shipping' => 1,
     'Vertex_Tax' => 1

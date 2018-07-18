@@ -10,7 +10,7 @@ define([
     "jquery/ui"
 ], function ($, Component, customerData) {
     'use strict';
-
+    var seenUrl = null;
     $(document).on('click', '.authentication-wrapper',function(){
         var object = customerData.get('notifications');
         var unread = parseInt(object().count);
@@ -19,7 +19,7 @@ define([
         if(unread && $(".authentication-dropdown").hasClass("_show"))
         {
             seen();
-            setTimeout(customerData.reload('notifications'), 5000);
+            setTimeout(customerData.reload('notifications'), 5000); 
         }
         
     });
@@ -27,10 +27,11 @@ define([
     function seen()
     {
         $.ajax({
-            url: '/magento2/blog/notification/seen',
+            url: seenUrl,
             type: 'POST'
         }).done(function(data){
-            console.log(data);            
+            console.log(data);
+                   
         });
     }
 
@@ -38,6 +39,7 @@ define([
         initialize: function () {
             this._super();
             this.loadNotifications = customerData.get('notifications');
+            seenUrl = this.AjaxSeenUrl;
         }
     });
 });

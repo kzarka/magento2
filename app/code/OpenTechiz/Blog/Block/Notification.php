@@ -3,7 +3,7 @@ namespace OpenTechiz\Blog\Block;
 use OpenTechiz\Blog\Api\Data\PostInterface;
 use OpenTechiz\Blog\Model\ResourceModel\Post\Collection as PostCollection;
 
-class SaveComment extends \Magento\Framework\View\Element\Template
+class Notification extends \Magento\Framework\View\Element\Template
 {
 	protected $_request;
 
@@ -21,29 +21,9 @@ class SaveComment extends \Magento\Framework\View\Element\Template
 		parent::__construct($context, $data);
 	}
 
-	public function getFormAction()
-	{
-		return '/magento2/blog/comment/save';
-	}
-
-	public function getAjaxUrl()
-	{
-		return '/magento2/blog/comment/load';
-	}
-
-	public function getPostID()
-	{
-		return $this->_request->getParam('post_id', false);
-	}
-
-	public function getAjaxNotificationLoadUrl()
-	{
-		return '/magento2/blog/notification/load';
-	}
-
 	public function getSeenUrl()
 	{
-		return '/magento2/blog/notification/load';
+		return '/magento2/blog/notification/seen';
 	}
 	public function isLoggedIn()
 	{
